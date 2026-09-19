@@ -1,6 +1,6 @@
 # CAMBRIC — Official Website
 
-**Software Studio** | Build. Ship. Repeat.
+**Software Studio** | cambric for all to all.
 
 ## Overview
 
@@ -13,30 +13,19 @@ Cambric is an independent software company that builds apps for clients. This re
 - Mobile Apps
 - SaaS Products
 - API Development
+- Hardware development
+- Experiments
+- Games 
 
-## Tech Stack
+## Skills We Have
 
 - HTML5
-- CSS3 (Custom Properties, Grid, Flexbox)
-- Vanilla JavaScript (ES6+)
+- CSS3 
+- JavaScript 
 - Inter font family
 - GitHub Pages
-
-## Development
-
-To view locally:
-```bash
-# Clone the repository
-git clone https://github.com/asserkdev/asserkdev.git
-
-# Open index.html in your browser
-# Or use a local server:
-npx serve .
-```
-
-## Deployment
-
-The site is deployed automatically to GitHub Pages at: https://asserkdev.github.io/asserkdev/
+- Flutter
+- Python
 
 ## Contact
 
@@ -46,4 +35,4 @@ The site is deployed automatically to GitHub Pages at: https://asserkdev.github.
 
 ---
 
-© 2025 Cambric. All rights reserved.
+© 2025-2026 Cambric. All rights reserved.
