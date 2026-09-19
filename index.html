@@ -201,25 +201,21 @@
                 <div class="service-card reveal">
                     <div class="service-icon">
                      <svg viewBox="0 0 64 64" width="64" height="64" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                        <!-- core -->
-                        <circle cx="32" cy="32" r="6.4"/>
-                        <!-- smooth radial branches -->
-                        <path d="M36.8 26.8 C39.2 25.6 42.4 24.8 45.2 25.8"/>
-                        <path d="M38.6 30.6 C41.6 30.8 44.6 32.2 46.6 34.6"/>
-                        <path d="M36.0 34.4 C38.4 36.4 40.6 38.8 42.6 41.8"/>
-                        <path d="M32.8 38.8 C31.2 41.2 29.2 43.6 26.8 45.0"/>
-                        <path d="M28.8 34.8 C26.4 36.0 23.8 37.0 21.4 37.6"/>
-                        <path d="M27.2 29.6 C24.8 28.4 22.0 27.8 19.6 28.4"/>
-                        <!-- subtle inner connectors -->
-                        <path d="M32 26.0 L35.0 28.0"/>
-                        <path d="M32 38.0 L29.6 36.0"/>
-                        <!-- terminals -->
-                        <circle cx="45.2" cy="25.8" r="1.6"/>
-                        <circle cx="46.6" cy="34.6" r="1.6"/>
-                        <circle cx="42.6" cy="41.8" r="1.6"/>
-                        <circle cx="26.8" cy="45.0" r="1.6"/>
-                        <circle cx="21.4" cy="37.6" r="1.6"/>
-                        <circle cx="19.6" cy="28.4" r="1.6"/>
+                     <defs>
+                       <g id="neuron-branch">
+                         <path d=" M32 25.6 C32 22.4 35.4 20.8 35.4 17.2 C35.4 13.8 33.9 11.8 32 9.4 "/>
+                         <circle cx="32" cy="9.4" r="1.8"/>
+                       </g>
+                     </defs>
+                       <!-- central core -->
+                       <circle cx="32" cy="32" r="6.4"/>
+                       <!-- six identical neural branches -->
+                       <use href="#neuron-branch"/>
+                       <use href="#neuron-branch" transform="rotate(60 32 32)"/>
+                       <use href="#neuron-branch" transform="rotate(120 32 32)"/>
+                       <use href="#neuron-branch" transform="rotate(180 32 32)"/>
+                       <use href="#neuron-branch" transform="rotate(240 32 32)"/>
+                       <use href="#neuron-branch" transform="rotate(300 32 32)"/>
                       </svg>
                     </div>
                     <h3 class="service-title">AI Products</h3>
