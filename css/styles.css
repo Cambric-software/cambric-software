@@ -153,10 +153,14 @@ img {
     align-items: center;
     height: 72px;
 }
-
+.logo {
+   border: 1px;
+   border-color: white;
+}
 .nav-logo {
     font-size: var(--font-size-xl);
     font-weight: 800;
+    left: 20px;
     letter-spacing: 0.1em;
     color: var(--color-text-primary);
 }
