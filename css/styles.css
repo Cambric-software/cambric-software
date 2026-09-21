@@ -149,18 +149,16 @@ img {
     margin: 0 auto;
     padding: 0 var(--space-6);
     display: flex;
-    justify-content: space-between;
     align-items: center;
     height: 72px;
 }
-.logo {
-   border: 1px;
-   border-color: white;
-}
+
 .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
     font-size: var(--font-size-xl);
     font-weight: 800;
-    left: 20px;
     letter-spacing: 0.1em;
     color: var(--color-text-primary);
 }
@@ -168,6 +166,7 @@ img {
 .nav-menu {
     display: flex;
     gap: var(--space-8);
+    margin-left: auto;
 }
 
 .nav-link {
