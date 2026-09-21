@@ -153,19 +153,23 @@ img {
     height: 72px;
 }
 
+.logo {
+    width: 52px;
+    height: 52px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
 .nav-logo {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    font-size: var(--font-size-xl);
+    margin-left: 10px;
+    font-size: 1.25rem;
     font-weight: 800;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.04em;
     color: var(--color-text-primary);
+    text-decoration: none;
 }
 
 .nav-menu {
-    display: flex;
-    gap: var(--space-8);
     margin-left: auto;
 }
 
