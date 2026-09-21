@@ -170,7 +170,12 @@ img {
 }
 
 .nav-menu {
-    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: var(--space-8);
+    list-style: none;
+    margin: 0 0 0 auto;
+    padding: 0;
 }
 
 .nav-link {
