@@ -27,7 +27,7 @@
                 <li><a href="#services" class="nav-link">Services</a></li>
                 <li><a href="#about" class="nav-link">About</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
-                <li><a href="#donate" class="nav-link">Donate</a></li>
+                <li><a href="#" class="nav-link" id="donateBtn">Donate</a></li>
             </ul>
         </div>
     </nav>
@@ -452,16 +452,6 @@
                     <p class="footer-tagline">CAMBRIC FOR ALL TO ALL.</p>
                 </div>
                 <div class="footer-links">
-                    <h4>Navigation</h4>
-                    <ul>
-                        <li><a href="#products">Products</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                        <li><a href="#donate">Donate</a></li>
-                    </ul>
-                </div>
-                <div class="footer-links">
                     <h4>Contact</h4>
                     <ul>
                         <li><a href="mailto:asser.k.dev@gmail.com">asser.k.dev@gmail.com</a></li>
@@ -475,7 +465,24 @@
             </div>
         </div>
     </footer>
+    <!-- Donate Modal -->
+    <div id="donateModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Support CAMBRIC</h2>
+            <p>You can donate using:</p>
 
+            <div class="donate-option">
+                <strong>InstaPay</strong>
+                <p onclick="copyNumber()">01007379630 📋</p>
+            </div>
+            <div class="donate-option">
+                <strong>Vodafone Cash</strong>
+                <p onclick="copyNumber()">01007379630 📋</p>
+            </div>
+        </div>
+    </div>
+    <div id="toast">Copied to clipboard!</div>
     <script src="js/main.js"></script>
 </body>
 </html>
