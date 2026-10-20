@@ -482,8 +482,9 @@ img {
    ======================================== */
 .products-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: var(--space-6);
+    margin-bottom: var(--space-12);
 }
 
 .product-card {
@@ -494,6 +495,9 @@ img {
     transition: all var(--transition-base);
     position: relative;
     overflow: hidden;
+    flex-direction: row;
+    flex: 1;
+    flex-grow: 1;
 }
 
 .product-card::before {
@@ -506,12 +510,14 @@ img {
     background: linear-gradient(90deg, var(--color-accent), transparent);
     opacity: 0;
     transition: opacity var(--transition-base);
+    flex-shrink: 0;
 }
 
 .product-card:hover {
     background: var(--color-bg-card-hover);
     border-color: var(--color-border);
     transform: translateY(-4px);
+    flex-grow: 1.10;
 }
 
 .product-card:hover::before {
