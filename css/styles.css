@@ -481,10 +481,11 @@ img {
    Products Section
    ======================================== */
 .products-grid {
-    display: grid;
+    display: inline-grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: var(--space-6);
+    column-gap: 20px;
     margin-bottom: var(--space-12);
+    padding: var(--space-6) 0;
 }
 
 .product-card {
@@ -495,9 +496,6 @@ img {
     transition: all var(--transition-base);
     position: relative;
     overflow: hidden;
-    flex-direction: row;
-    flex: 1;
-    flex-grow: 1;
 }
 
 .product-card::before {
