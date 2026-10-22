@@ -249,3 +249,13 @@ function copyNumber() {
         toast.classList.remove("show");
     }, 2000);
 }
+// Showcase tabs
+document.querySelectorAll('.tab').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.tab').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    const panel = document.getElementById(btn.dataset.tab);
+    if (panel) panel.classList.add('active');
+  });
+});
