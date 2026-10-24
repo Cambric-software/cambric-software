@@ -298,3 +298,19 @@ const animateMetrics = () => {
   });
 };
 animateMetrics();
+// Code playground
+const codeInput = document.getElementById('codeInput');
+const codeOutput = document.getElementById('codeOutput');
+const runCode = document.getElementById('runCode');
+if (runCode) {
+  runCode.addEventListener('click', () => {
+    const code = codeInput.value;
+    // Simple simulation: extract print statements
+    const prints = code.match(/print\(['"](.+?)['"]\)/g);
+    if (prints) {
+      codeOutput.textContent = prints.map(p => p.match(/print\(['"](.+?)['"]\)/)[1]).join('\n');
+    } else {
+      codeOutput.textContent = 'No print statements found.';
+    }
+  });
+}
