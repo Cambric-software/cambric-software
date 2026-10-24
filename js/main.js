@@ -249,3 +249,52 @@ function copyNumber() {
         toast.classList.remove("show");
     }, 2000);
 }
+// Interactive demo palette
+const demoInput = document.getElementById('demoInput');
+const demoOutput = document.getElementById('demoOutput');
+const demoRules = [
+  { test: /hash/i, tool: 'hash_tool', msg: 'Tool: hash (security). Fills in the text to hash.' },
+  { test: /csv/i, tool: 'csv_tool', msg: 'Tool: CSV parse/encode (data).' },
+  { test: /file|folder|delete|copy|move/i, tool: 'system_command', msg: 'Tool: system_command (file/folder actions).' },
+  { test: /unit|convert/i, tool: 'unit_converter', msg: 'Tool: unit converter (everyday).' },
+  { test: /qr/i, tool: 'qr_tool', msg: 'Tool: QR generator (media).' },
+];
+if (demoInput) {
+  demoInput.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+      const q = demoInput.value.trim();
+      if (!q) return;
+      const match = demoRules.find(r => r.test.test(q));
+      demoOutput.textContent = match ? match.msg + '\nConfidence: ~85%\nArguments: extracted from sentence.' : 'No matching tool. Try: hash, csv, delete file, convert units, qr.';
+    }
+  });
+}
+
+// Metrics counter
+const animateMetrics = () => {
+  document.querySelectorAll('.metric-number').forEach(counter => {
+    const target = parseInt(counter.getAttribute('data-target'));
+    const duration = 1500;
+    const increment = target / (duration / 16);
+    let current = 0;
+    const update = () => {
+      current += increment;
+      if (current < target) {
+        counter.textContent = Math.floor(current);
+        requestAnimationFrame(update);
+      } else {
+        counter.textContent = target;
+      }
+    };
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          update();
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+    observer.observe(counter);
+  });
+};
+animateMetrics();
