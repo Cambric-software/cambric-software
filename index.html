@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAMBRIC — Studio</title>
+    <meta name="description" content="Cambric is a studio that builds apps for clients and ships its own products. Professional, minimal, modern software development and hardware development.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" type="image/png" href="logo.png">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <img class="logo" src="logo.png" alt="Cambric logo">
+            <a href="#" class="nav-logo">CAMBRIC</a>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="#products" class="nav-link">Products</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li><a href="#" class="nav-link" id="donateBtn">Donate</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title reveal">CAMBRIC</h1>
+            <div class="hero-badge reveal">Studio</div>
+            <p class="hero-tagline reveal">CAMBRIC FOR ALL TO ALL</p>
+            <p class="hero-description reveal">
+                We build software and hardware for clients and ship our own products. 
+                Clean code, modern design, delivered fast.
+            </p>
+            <div class="hero-actions reveal">
+                <a href="#services" class="btn btn-primary">Our Services</a>
+                <a href="#products" class="btn btn-secondary">View Products</a>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="hero-grid">
+                <div class="grid-line horizontal"></div>
+                <div class="grid-line horizontal"></div>
+                <div class="grid-line horizontal"></div>
+                <div class="grid-line vertical"></div>
+                <div class="grid-line vertical"></div>
+                <div class="grid-line vertical"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="section">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">Our Products</span>
+                <p class="section-description">
+                    We create products that solve real problems. From productivity tools to 
+                    consumer apps, our products are designed with care and built to last.
+                </p>
+            </div>
+            <div class="products-grid">
+                <div class="product-card reveal">
+                    <div class="product-icon">
+                        <img src="Max tools.png" alt="Max Tools" width="64" height="64">
+                    </div>
+                    <h3 class="product-title"><a href="https://cambric-software.github.io/Max-Tools/">Max Tools</a></h3>
+                    <p class="product-description">
+                        Max Tools is a suite of productivity tools designed to help you get more done in less time. 
+                        From task management to note-taking, Max Tools has you covered.
+                    </p>
+                    <div class="product-tags">
+                        <span>Productivity</span>
+                        <span>Task Management</span>
+                        <span>Note-Taking</span>
+                    </div>
+            </div>
+            <div class="product-card reveal">
+                    <div class="product-icon">
+                        <img src="digital saver.png" alt="Digital Saver" width="64" height="64">
+                    </div>
+                    <h3 class="product-title"><a href="https://cambric-software.github.io/Digital-saver/">Digital Saver</a></h3>
+                    <p class="product-description">
+                        Digital Saver helps connect to the veyro smartwatch with full control over the watch and
+                        its functions and fully customize the watch with the app and its functions.
+                    </p>
+                    <div class="product-tags">
+                        <span>Connectivity</span>
+                        <span>Health Monitoring</span>
+                        <span>Customization</span>
+                    </div>
+            </div>
+            <div class="product-card reveal">
+                    <div class="product-icon">
+                        <img src="web explorer.png" alt="Web Explorer" width="64" height="64">
+                    </div>
+                    <h3 class="product-title"><a href="https://cambric-software.github.io/Web-Explorer/">Web Explorer</a></h3>
+                    <p class="product-description">
+                        Web Explorer is a powerful a website link generator designed for infinite possibilities. 
+                        It provides a clean and intuitive interface, making it easy to navigate and use.
+                    </p>
+                    <div class="product-tags">
+                        <span>Website Link Generator</span>
+                        <span>Intuitive Interface</span>
+                        <span>Infinite Possibilities</span>
+                    </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Services Section -->
+    <section id="services" class="section">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">What We Do</span>
+                <h2 class="section-title">Client Services</h2>
+                <p class="section-description">
+                    We partner with businesses and individuals to build software that solves real problems.
+                    From MVPs to production systems, we deliver quality on time.
+                </p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card reveal">
+                    <div class="service-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">Web Applications</h3>
+                    <p class="service-description">
+                        Full-stack web apps built with modern frameworks. 
+                        Responsive, fast, and scalable from day one.
+                    </p>
+                    <div class="service-tags">
+                        <span>React</span>
+                        <span>Node.js</span>
+                        <span>Python</span>
+                    </div>
+                </div>
+                <div class="service-card reveal">
+                    <div class="service-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/>
+                            <line x1="12" y1="18" x2="12" y2="18"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">Mobile Apps</h3>
+                    <p class="service-description">
+                        Native and cross-platform mobile applications 
+                        that provide seamless experiences on iOS and Android.
+                    </p>
+                    <div class="service-tags">
+                        <span>React Native</span>
+                        <span>Flutter</span>
+                        <span>Swift</span>
+                    </div>
+                </div>
+                <div class="service-card reveal">
+                    <div class="service-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                            <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+                            <line x1="12" y1="22.08" x2="12" y2="12"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">SaaS Products</h3>
+                    <p class="service-description">
+                        Launch your SaaS idea with a solid technical foundation. 
+                        Payments, auth, dashboards — we handle the stack.
+                    </p>
+                    <div class="service-tags">
+                        <span>SaaS</span>
+                        <span>API</span>
+                        <span>Scaling</span>
+                    </div>
+                </div>
+                <div class="service-card reveal">
+                    <div class="service-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <polyline points="16 18 22 12 16 6"/>
+                            <polyline points="8 6 2 12 8 18"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">API Development</h3>
+                    <p class="service-description">
+                        REST and GraphQL APIs designed for performance and developer experience. 
+                        Well-documented, thoroughly tested.
+                    </p>
+                    <div class="service-tags">
+                        <span>REST</span>
+                        <span>GraphQL</span>
+                        <span>Documentation</span>
+                    </div>
+                </div>
+                <div class="service-card reveal">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 64 64" width="64" height="64" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                           <!-- central chip -->
+                           <rect x="22" y="22" width="20" height="20" rx="3"/>
+                           <!-- chip core -->
+                           <rect x="27" y="27" width="10" height="10" rx="1.5"/>
+                           <!-- top pins -->
+                           <path d="M27 22 V16"/>
+                           <path d="M32 22 V14"/>
+                           <path d="M37 22 V16"/>
+                           <!-- bottom pins -->
+                           <path d="M27 42 V48"/>
+                           <path d="M32 42 V50"/>
+                           <path d="M37 42 V48"/>
+                           <!-- left pins -->
+                           <path d="M22 27 H16"/>
+                           <path d="M22 32 H14"/>
+                           <path d="M22 37 H16"/>
+                           <!-- right pins -->
+                           <path d="M42 27 H48"/>
+                           <path d="M42 32 H50"/>
+                           <path d="M42 37 H48"/>
+                           <!-- circuit terminals -->
+                           <circle cx="14" cy="32" r="1.3"/>
+                           <circle cx="50" cy="32" r="1.3"/>
+                           <circle cx="32" cy="14" r="1.3"/>
+                           <circle cx="32" cy="50" r="1.3"/>
+                           <!-- small internal circuit paths -->
+                           <path d="M29 27 V24"/>
+                           <path d="M35 27 V24"/>
+                           <path d="M29 37 V40"/>
+                           <path d="M35 37 V40"/>
+                           <path d="M27 29 H24"/>
+                           <path d="M27 35 H24"/>
+                           <path d="M37 29 H40"/>
+                           <path d="M37 35 H40"/>
+                       </svg>
+                    </div>
+                    <h3 class="service-title">Hardware Development</h3>
+                    <p class="service-description">
+                        Hardware that's actually affordable without compromising quality. 
+                        Designed and built by Cambric.
+                    </p>
+                    <div class="service-tags">
+                        <span>Accsesories</span>
+                        <span>Every Day Use</span>
+                        <span>High Quality</span>
+                    </div>
+                </div>
+                <div class="service-card reveal">
+                    <div class="service-icon">
+                            <svg viewBox="0 0 64 64" width="64" height="64" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <!-- flask -->
+                                <path d=" M25 9 H39 V24 L51.2 48.2 C52.8 51.4 50.5 55 46.9 55 H17.1 C13.5 55 11.2 51.4 12.8 48.2 L25 24 Z"/>
+                                <!-- flask rim -->
+                                <path d="M23 9 H41"/>
+                                <!-- liquid surface -->
+                                <path d=" M15.2 43.8 C19.5 41.8 23.5 41.2 27.8 42.5 C32.2 43.8 35.5 45.2 39.7 44.3 C43.2 43.6 46.2 42.2 49.2 41.2"/>
+                                <!-- bubbles -->
+                                <circle cx="29" cy="49" r="1.4"/>
+                                <circle cx="36" cy="47" r="1"/>
+                                <circle cx="40" cy="51" r="1.8"/>
+                                <!-- rising bubbles -->
+                                <circle cx="44.5" cy="27" r="1.3"/>
+                                <circle cx="49" cy="21" r="0.9"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">Experiments</h3>
+                    <p class="service-description">
+                        Experimenting with software and hardware 
+                        to improve the user experience.
+                    </p>
+                    <div class="service-tags">
+                        <span>User Voting</span>
+                        <span>New ideas</span>
+                        <span>Better Experince</span>
+                    </div>
+                </div>
+                <div class="service-card reveal">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 64 64" width="64" height="64" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                           <!-- controller body -->
+                           <path d=" M17.5 25.5 C20.2 21.8 24.5 20 32 20 C39.5 20 43.8 21.8 46.5 25.5 C49.2 29.2 51.2 38.2 50.8 43.5 C50.5 47.2 48.4 49 45.8 47.2 L40.2 41.8 C38.8 40.5 37.2 40 35.2 40 H28.8 C26.8 40 25.2 40.5 23.8 41.8 L18.2 47.2 C15.6 49 13.5 47.2 13.2 43.5 C12.8 38.2 14.8 29.2 17.5 25.5 Z"/>
+                           <!-- left analog stick -->
+                           <circle cx="24" cy="30" r="3.2"/>
+                           <!-- right analog stick -->
+                           <circle cx="40" cy="30" r="3.2"/>
+                           <!-- center buttons -->
+                           <path d="M29.5 27.5 H34.5"/>
+                           <path d="M30.5 30 H33.5"/>
+                       </svg>
+                    </div>
+                    <h3 class="service-title">Games</h3>
+                    <p class="service-description">
+                        Games For Both Android, Windows And Linux.
+                        Most Available Graphics While Being Mostly local.
+                    </p>
+                    <div class="service-tags">
+                        <span>All operating systems</span>
+                        <span>Mostly Local</span>
+                        <span>High Graphics</span>
+                    </div>
+                </div>
+                <div class="service-card reveal">
+                    <div class="service-icon">
+                     <svg viewBox="0 0 64 64" width="64" height="64" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                     <defs>
+                       <g id="neuron-branch">
+                         <path d=" M32 25.6 C32 22.4 35.4 20.8 35.4 17.2 C35.4 13.8 33.9 11.8 32 9.4 "/>
+                         <circle cx="32" cy="9.4" r="1.8"/>
+                       </g>
+                     </defs>
+                       <!-- central core -->
+                       <circle cx="32" cy="32" r="6.4"/>
+                       <!-- six identical neural branches -->
+                       <use href="#neuron-branch"/>
+                       <use href="#neuron-branch" transform="rotate(60 32 32)"/>
+                       <use href="#neuron-branch" transform="rotate(120 32 32)"/>
+                       <use href="#neuron-branch" transform="rotate(180 32 32)"/>
+                       <use href="#neuron-branch" transform="rotate(240 32 32)"/>
+                       <use href="#neuron-branch" transform="rotate(300 32 32)"/>
+                      </svg>
+                    </div>
+                    <h3 class="service-title">AI Products</h3>
+                    <p class="service-description">
+                        AI Products Are Apps That Its Main Function Has AI Like AI Chat, Simultions.
+                        We Make AI Products With Large Models And For Every Day Use.
+                    </p>
+                    <div class="service-tags">
+                        <span>AI</span>
+                        <span>Simulations</span>
+                        <span>Chats</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="services-cta reveal">
+                <div class="cta-content">
+                    <h3>Have a project in mind?</h3>
+                    <p>We take on a limited number of projects to ensure quality. Let's talk about yours.</p>
+                    <a href="#contact" class="btn btn-accent">Start a Conversation</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-content reveal">
+                    <span class="section-label">About Us</span>
+                    <h2 class="section-title">Built for Quality</h2>
+                    <p class="about-text">
+                        Cambric started with a simple belief: good software and hardware doesn't have to be complicated.
+                        We focus on clean architecture, thoughtful design, and code that others can maintain.
+                    </p>
+                    <p class="about-text">
+                        We take on client work to fund our own products. This hybrid model means we're 
+                        selective about what we build — for others and for ourselves. Every project gets 
+                        our full attention.
+                    </p>
+                    <div class="about-values">
+                        <div class="value-item">
+                            <span class="value-number">01</span>
+                            <div>
+                                <h4>Quality First</h4>
+                                <p>We'd rather deliver one excellent thing than five mediocre ones.</p>
+                            </div>
+                        </div>
+                        <div class="value-item">
+                            <span class="value-number">02</span>
+                            <div>
+                                <h4>Clear Communication</h4>
+                                <p>No jargon, no surprises. You'll always know where your project stands.</p>
+                            </div>
+                        </div>
+                        <div class="value-item">
+                            <span class="value-number">03</span>
+                            <div>
+                                <h4>Ship Fast, Iterate</h4>
+                                <p>We believe in momentum. Working beats perfect plans.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-stats reveal">
+                    <div class="stat-card">
+                        <span class="stat-number" data-target="28">0</span>
+                        <span class="stat-plus">+</span>
+                        <span class="stat-label">Coding Languages</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number" data-target="20">0</span>
+                        <span class="stat-plus">%</span>
+                        <span class="stat-label">Cheaper</span>
+                        <span class="stat-label">Than Other Options</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section section-accent">
+        <div class="container">
+            <div class="contact-content reveal">
+                <h2 class="contact-title">Let's Build Something</h2>
+                <p class="contact-description">
+                    Have a project in mind? Interested in our products? 
+                    We'd love to hear from you.
+                </p>
+                <div class="contact-methods">
+                    <a href="mailto:asser.k.dev@gmail.com" class="contact-item">
+                        <div class="contact-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                <polyline points="22,6 12,13 2,6"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <span class="contact-label">Email</span>
+                            <span class="contact-value">asser.k.dev@gmail.com</span>
+                        </div>
+                    </a>
+                    <a href="mailto:asserk651@gmail.com" class="contact-item">
+                        <div class="contact-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <span class="contact-label">Secondary Email</span>
+                            <span class="contact-value">asserk651@gmail.com</span>
+                        </div>
+                    </a>
+                    <a href="tel:+201007379630" class="contact-item">
+                        <div class="contact-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <span class="contact-label">Phone</span>
+                            <span class="contact-value">+20 1007379630</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <span class="footer-logo">CAMBRIC</span>
+                    <p class="footer-tagline">CAMBRIC FOR ALL TO ALL.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="mailto:asser.k.dev@gmail.com">asser.k.dev@gmail.com</a></li>
+                        <li><a href="mailto:asserk651@gmail.com">asserk651@gmail.com</a></li>
+                        <li><a href="tel:+201007379630">+20 1007379630</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025-2026 Cambric. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- Donate Modal -->
+    <div id="donateModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Support CAMBRIC</h2>
+            <p>You can donate using:</p>
+
+            <div class="donate-option">
+                <strong>InstaPay</strong>
+                <p onclick="copyNumber()">01007379630 📋</p>
+            </div>
+            <div class="donate-option">
+                <strong>Vodafone Cash</strong>
+                <p onclick="copyNumber()">01007379630 📋</p>
+            </div>
+        </div>
+    </div>
+    <div id="toast">Copied to clipboard!</div>
+    <script src="js/main.js"></script>
+</body>
+</html>
