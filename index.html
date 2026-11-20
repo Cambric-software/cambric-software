@@ -1,502 +1,280 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CAMBRIC — Studio</title>
-    <meta name="description" content="Cambric is a studio that builds apps for clients and ships its own products. Professional, minimal, modern software development and hardware development.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="icon" type="image/png" href="logo.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cambric — Software &amp; Hardware Studios</title>
+<meta name="description" content="Cambric builds private, local-first software and hardware: Veyro, Max Tools, Web Explorer, C-Editor and Cambric AI.">
+<link rel="icon" href="img/cambric.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0a0c;--bg2:#111114;--bg3:#18181c;--card:#141418;--tx:#fff;--t2:#a1a1aa;--t3:#71717a;--ac:#67e8f9;--bd:#27272a;--bd2:#1f1f23;--ok:#4ade80;--warn:#fbbf24}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{background:var(--bg);color:var(--tx);font:400 16px/1.6 Inter,system-ui,sans-serif;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--ac);outline-offset:3px}
+.wrap{max-width:1200px;margin:auto;padding:0 24px}
+#bar{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--ac),#fff);z-index:60}
+nav{position:fixed;inset:0 0 auto;z-index:50;background:rgba(10,10,12,.78);backdrop-filter:blur(12px);border-bottom:1px solid var(--bd2);padding-top:env(safe-area-inset-top)}
+nav .wrap{display:flex;align-items:center;gap:30px;height:72px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.06em;font-size:20px;margin-right:auto}
+.brand img{width:46px;height:46px;transition:transform .6s}.brand:hover img{transform:rotate(360deg)}
+nav a.l{font-size:14px;font-weight:500;color:var(--t2);transition:color .15s;position:relative}
+nav a.l:hover,nav a.l.on{color:#fff}
+nav a.l::after{content:"";position:absolute;left:0;bottom:-6px;height:2px;width:0;background:var(--ac);transition:width .25s}
+nav a.l:hover::after,nav a.l.on::after{width:100%}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:12px;font:600 14px Inter;border:1px solid var(--bd);background:none;color:#fff;cursor:pointer;transition:.2s}
+.btn.w{background:#fff;color:var(--bg);border-color:#fff}
+.btn.w:hover{background:var(--ac);border-color:var(--ac);transform:translateY(-2px);box-shadow:0 0 40px rgba(103,232,249,.25)}
+.btn:not(.w):hover{border-color:var(--ac);color:var(--ac);transform:translateY(-2px)}
+.btn.sm{padding:9px 18px}
+/* hero */
+.hero{position:relative;min-height:100svh;display:grid;place-items:center;text-align:center;padding:120px 24px 70px;overflow:hidden}
+#cv{position:absolute;inset:0;width:100%;height:100%}
+.orb{position:absolute;border-radius:50%;filter:blur(90px);opacity:.28;animation:float 14s ease-in-out infinite}
+.o1{width:460px;height:460px;background:#67e8f9;top:-120px;left:-100px}
+.o2{width:380px;height:380px;background:#6366f1;bottom:-80px;right:-60px;animation-delay:-5s}
+.o3{width:260px;height:260px;background:#e63946;top:40%;left:60%;opacity:.14;animation-delay:-9s}
+@keyframes float{50%{transform:translate(50px,-40px) scale(1.15)}}
+.grid{position:absolute;inset:0;background-image:linear-gradient(var(--bd2) 1px,transparent 1px),linear-gradient(90deg,var(--bd2) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(ellipse at center,#000 20%,transparent 70%);animation:pan 20s linear infinite}
+@keyframes pan{to{background-position:64px 64px}}
+.hc{position:relative;max-width:860px}
+.badge{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border-radius:99px;background:rgba(103,232,249,.1);color:var(--ac);font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;margin-bottom:26px}
+.badge i{width:8px;height:8px;border-radius:50%;background:var(--ok);animation:pulse 1.6s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(74,222,128,.7)}100%{box-shadow:0 0 0 12px transparent}}
+h1{font-size:clamp(46px,11vw,112px);font-weight:800;letter-spacing:.14em;line-height:1.05;background:linear-gradient(110deg,#fff 20%,var(--ac) 45%,#fff 70%);background-size:220% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:sheen 6s linear infinite}
+@keyframes sheen{to{background-position:-220% 0}}
+.tag{font-size:clamp(12px,2.2vw,19px);font-weight:600;color:var(--t3);letter-spacing:.3em;margin:10px 0 26px}
+.type{font-size:clamp(20px,3.2vw,32px);font-weight:600;min-height:1.4em}
+.type b{color:var(--ac);font-weight:700}.type u{display:inline-block;width:2px;height:1em;background:var(--ac);vertical-align:-.12em;margin-left:3px;animation:blink 1s steps(1) infinite;text-decoration:none}
+@keyframes blink{50%{opacity:0}}
+.hd{color:var(--t2);font-size:18px;line-height:1.8;max-width:640px;margin:22px auto 36px}
+.acts{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.hint{position:absolute;bottom:26px;left:50%;width:22px;height:36px;border:2px solid var(--t3);border-radius:12px;transform:translateX(-50%)}
+.hint::after{content:"";position:absolute;left:50%;top:6px;width:3px;height:7px;margin-left:-1.5px;border-radius:2px;background:var(--ac);animation:wheel 1.6s infinite}
+@keyframes wheel{to{transform:translateY(12px);opacity:0}}
+/* marquee */
+.mq{border-block:1px solid var(--bd2);background:var(--bg2);overflow:hidden;padding:18px 0}
+.mq div{display:flex;gap:56px;width:max-content;animation:scroll 32s linear infinite;color:var(--t3);font-weight:600;letter-spacing:.2em;text-transform:uppercase;font-size:13px;white-space:nowrap}
+.mq span::before{content:"◆";color:var(--ac);margin-right:56px}
+@keyframes scroll{to{transform:translateX(-50%)}}
+/* sections */
+section{padding:110px 0;position:relative}
+.dark{background:var(--bg2)}
+.sh{text-align:center;max-width:720px;margin:0 auto 64px}
+.lab{font-size:12px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--ac)}
+h2{font-size:clamp(30px,5vw,46px);font-weight:700;letter-spacing:-.02em;margin:12px 0}
+.sd{color:var(--t2);font-size:18px;line-height:1.8}
+/* products */
+.pg{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:24px}
+.pc{position:relative;background:var(--card);border:1px solid var(--bd2);border-radius:20px;padding:32px;overflow:hidden;display:flex;flex-direction:column;transform-style:preserve-3d;transition:border-color .25s,box-shadow .25s}
+.pc::before{content:"";position:absolute;inset:0;background:radial-gradient(420px circle at var(--mx,50%) var(--my,0%),rgba(103,232,249,.13),transparent 45%);opacity:0;transition:opacity .3s;pointer-events:none}
+.pc:hover{border-color:rgba(103,232,249,.4);box-shadow:0 20px 60px rgba(0,0,0,.5),0 0 40px rgba(103,232,249,.08)}
+.pc:hover::before{opacity:1}
+.pc.big{grid-column:1/-1;flex-direction:row;gap:40px;align-items:center}
+.pc.big .tx{flex:1}
+.top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:20px}
+.pc img.lg{width:72px;height:72px;border-radius:16px;transition:transform .4s}.pc:hover img.lg{transform:scale(1.1) rotate(-4deg)}
+.ver{font-size:12px;font-weight:600;color:var(--t3);background:var(--bg3);padding:4px 12px;border-radius:6px}
+.pc h3{font-size:26px;font-weight:700;letter-spacing:-.01em}
+.pt{font-size:14px;font-weight:500;color:var(--ac);margin:4px 0 14px}
+.pd{color:var(--t2);line-height:1.75;margin-bottom:16px}
+.pc ul{list-style:none;display:grid;gap:8px;margin-bottom:18px;font-size:14.5px;color:var(--t2)}
+.pc li{padding-left:22px;position:relative}.pc li::before{content:"→";position:absolute;left:0;color:var(--ac)}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}.tags span{font-size:12px;font-weight:500;color:var(--t3);background:var(--bg3);padding:4px 12px;border-radius:6px}
+.ft{margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.st{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--t3)}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--ok);box-shadow:0 0 8px rgba(74,222,128,.6)}.dot.y{background:var(--warn);box-shadow:0 0 8px rgba(251,191,36,.5)}.dot.c{background:var(--ac);box-shadow:0 0 8px rgba(103,232,249,.4)}
+.watch{flex:0 0 280px;display:grid;place-items:center}
+.watch svg{width:100%;max-width:280px}
+.ecg{stroke-dasharray:420;animation:ecg 2.4s linear infinite}
+@keyframes ecg{from{stroke-dashoffset:420}to{stroke-dashoffset:-420}}
+.beat{transform-origin:center;animation:beat 1.2s ease-in-out infinite}
+@keyframes beat{15%{transform:scale(1.18)}30%{transform:scale(1)}}
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px}
+.sc{background:var(--card);border:1px solid var(--bd2);border-radius:20px;padding:32px;text-align:center}
+.sn{font-size:clamp(40px,5vw,56px);font-weight:800;line-height:1}.sn em{font-style:normal;color:var(--ac)}
+.sl{display:block;font-size:14px;color:var(--t3);margin-top:12px}
+/* values */
+.vals{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:40px;margin-top:70px}
+.v b{font-size:14px;color:var(--ac);opacity:.7}.v h4{font-size:19px;margin:6px 0}.v p{color:var(--t2);font-size:15px;line-height:1.7}
+/* talven */
+.tv{background:linear-gradient(135deg,var(--bg3),var(--bg2));border:1px solid var(--bd);border-radius:28px;padding:64px 40px;text-align:center;position:relative;overflow:hidden}
+.tv::after{content:"";position:absolute;inset:-50%;background:conic-gradient(from 0deg,transparent,rgba(103,232,249,.09),transparent 30%);animation:spin 12s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.tv>*{position:relative;z-index:1}
+.fam{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin:40px 0 30px;text-align:left}
+.fm{background:rgba(10,10,12,.6);border:1px solid var(--bd);border-radius:16px;padding:22px;transition:.25s}
+.fm:hover{transform:translateY(-6px);border-color:var(--ac)}
+.fm b{font-size:20px}.fm small{display:block;color:var(--ac);font-weight:600;font-size:12px;letter-spacing:.1em;text-transform:uppercase;margin:4px 0 8px}.fm p{color:var(--t2);font-size:14px;line-height:1.6}
+/* contact */
+.cm{display:grid;gap:14px;max-width:600px;margin:auto}
+.ci{display:flex;align-items:center;gap:20px;padding:20px 24px;background:var(--card);border:1px solid var(--bd2);border-radius:16px;transition:.2s}
+.ci:hover{transform:translateX(6px);border-color:var(--bd)}
+.ci i{width:48px;height:48px;border-radius:12px;background:rgba(103,232,249,.1);color:var(--ac);display:grid;place-items:center;font-style:normal;font-size:20px}
+.ci small{display:block;font-size:11px;color:var(--t3);text-transform:uppercase;letter-spacing:.06em;font-weight:500}
+footer{background:var(--bg2);border-top:1px solid var(--bd2);padding:60px 0 calc(30px + env(safe-area-inset-bottom));text-align:center;color:var(--t3);font-size:14px}
+footer b{display:block;color:#fff;font-size:20px;letter-spacing:.1em;margin-bottom:6px}
+/* reveal */
+.rv{opacity:0;transform:translateY(36px);transition:opacity .8s cubic-bezier(.2,.8,.2,1),transform .8s cubic-bezier(.2,.8,.2,1);transition-delay:var(--d,0s)}
+.rv.in{opacity:1;transform:none}
+/* modal */
+dialog{margin:auto;border:1px solid rgba(255,255,255,.1);border-radius:20px;background:#111118;color:#fff;padding:32px;max-width:420px;text-align:center}
+dialog::backdrop{background:rgba(0,0,0,.75);backdrop-filter:blur(5px)}
+.do{margin:14px 0;padding:16px;background:rgba(255,255,255,.04);border-radius:12px;cursor:pointer;border:0;color:#fff;width:100%;font:inherit}
+.do:hover{background:rgba(103,232,249,.1)}.do p{color:var(--ac);font-weight:600;font-size:18px}.do small{color:var(--t3)}
+@media(max-width:820px){nav a.l{display:none}.pc.big{flex-direction:column}.watch{flex:none}section{padding:80px 0}.pg{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+</style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <img class="logo" src="logo.png" alt="Cambric logo">
-            <a href="#" class="nav-logo">CAMBRIC</a>
-            <button class="nav-toggle" aria-label="Toggle navigation">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <ul class="nav-menu">
-                <li><a href="#products" class="nav-link">Products</a></li>
-                <li><a href="#services" class="nav-link">Services</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
-                <li><a href="#" class="nav-link" id="donateBtn">Donate</a></li>
-            </ul>
-        </div>
-    </nav>
+<div id="bar"></div>
+<nav><div class="wrap">
+<a class="brand" href="#top"><img src="img/cambric.png" alt="Cambric logo">CAMBRIC</a>
+<a class="l" href="#products">Products</a><a class="l" href="#numbers">By the numbers</a><a class="l" href="#talven">Talven</a><a class="l" href="#contact">Contact</a>
+<button class="btn sm" id="don">Support us</button>
+</div></nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1 class="hero-title reveal">CAMBRIC</h1>
-            <div class="hero-badge reveal">Studio</div>
-            <p class="hero-tagline reveal">CAMBRIC FOR ALL TO ALL</p>
-            <p class="hero-description reveal">
-                We build software and hardware for clients and ship our own products. 
-                Clean code, modern design, delivered fast.
-            </p>
-            <div class="hero-actions reveal">
-                <a href="#services" class="btn btn-primary">Our Services</a>
-                <a href="#products" class="btn btn-secondary">View Products</a>
-            </div>
-        </div>
-        <div class="hero-visual">
-            <div class="hero-grid">
-                <div class="grid-line horizontal"></div>
-                <div class="grid-line horizontal"></div>
-                <div class="grid-line horizontal"></div>
-                <div class="grid-line vertical"></div>
-                <div class="grid-line vertical"></div>
-                <div class="grid-line vertical"></div>
-            </div>
-        </div>
-    </section>
+<header class="hero" id="top">
+<div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div><div class="grid"></div><canvas id="cv" aria-hidden="true"></canvas>
+<div class="hc">
+<span class="badge rv"><i></i>Software &amp; Hardware Studios</span>
+<h1 class="rv" style="--d:.1s">CAMBRIC</h1>
+<p class="tag rv" style="--d:.2s">LOCAL · PRIVATE · YOURS</p>
+<div class="type rv" style="--d:.3s">We build <b id="ty"></b><u></u></div>
+<p class="hd rv" style="--d:.4s">An independent studio making fast, private, local-first apps and hardware. No accounts, no subscriptions, no cloud dependence. Your data stays on your device.</p>
+<div class="acts rv" style="--d:.5s"><a class="btn w" href="#products">Explore products →</a><a class="btn" href="https://github.com/Cambric-software" target="_blank" rel="noopener">GitHub</a></div>
+</div><div class="hint"></div>
+</header>
 
-    <!-- Products Section -->
-    <section id="products" class="section">
-        <div class="container">
-            <div class="section-header reveal">
-                <span class="section-label">Our Products</span>
-                <p class="section-description">
-                    We create products that solve real problems. From productivity tools to 
-                    consumer apps, our products are designed with care and built to last.
-                </p>
-            </div>
-            <div class="products-grid">
-                <div class="product-card reveal">
-                    <div class="product-icon">
-                        <img src="Max tools.png" alt="Max Tools" width="64" height="64">
-                    </div>
-                    <h3 class="product-title"><a href="https://cambric-software.github.io/Max-Tools/">Max Tools</a></h3>
-                    <p class="product-description">
-                        Max Tools is a suite of productivity tools designed to help you get more done in less time. 
-                        From task management to note-taking, Max Tools has you covered.
-                    </p>
-                    <div class="product-tags">
-                        <span>Productivity</span>
-                        <span>Task Management</span>
-                        <span>Note-Taking</span>
-                    </div>
-            </div>
-            <div class="product-card reveal">
-                    <div class="product-icon">
-                        <img src="digital saver.png" alt="Digital Saver" width="64" height="64">
-                    </div>
-                    <h3 class="product-title"><a href="https://cambric-software.github.io/Digital-saver/">Digital Saver</a></h3>
-                    <p class="product-description">
-                        Digital Saver helps connect to the veyro smartwatch with full control over the watch and
-                        its functions and fully customize the watch with the app and its functions.
-                    </p>
-                    <div class="product-tags">
-                        <span>Connectivity</span>
-                        <span>Health Monitoring</span>
-                        <span>Customization</span>
-                    </div>
-            </div>
-            <div class="product-card reveal">
-                    <div class="product-icon">
-                        <img src="web explorer.png" alt="Web Explorer" width="64" height="64">
-                    </div>
-                    <h3 class="product-title"><a href="https://cambric-software.github.io/Web-Explorer/">Web Explorer</a></h3>
-                    <p class="product-description">
-                        Web Explorer is a powerful a website link generator designed for infinite possibilities. 
-                        It provides a clean and intuitive interface, making it easy to navigate and use.
-                    </p>
-                    <div class="product-tags">
-                        <span>Website Link Generator</span>
-                        <span>Intuitive Interface</span>
-                        <span>Infinite Possibilities</span>
-                    </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Services Section -->
-    <section id="services" class="section">
-        <div class="container">
-            <div class="section-header reveal">
-                <span class="section-label">What We Do</span>
-                <h2 class="section-title">Client Services</h2>
-                <p class="section-description">
-                    We partner with businesses and individuals to build software that solves real problems.
-                    From MVPs to production systems, we deliver quality on time.
-                </p>
-            </div>
-            <div class="services-grid">
-                <div class="service-card reveal">
-                    <div class="service-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-                        </svg>
-                    </div>
-                    <h3 class="service-title">Web Applications</h3>
-                    <p class="service-description">
-                        Full-stack web apps built with modern frameworks. 
-                        Responsive, fast, and scalable from day one.
-                    </p>
-                    <div class="service-tags">
-                        <span>React</span>
-                        <span>Node.js</span>
-                        <span>Python</span>
-                    </div>
-                </div>
-                <div class="service-card reveal">
-                    <div class="service-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/>
-                            <line x1="12" y1="18" x2="12" y2="18"/>
-                        </svg>
-                    </div>
-                    <h3 class="service-title">Mobile Apps</h3>
-                    <p class="service-description">
-                        Native and cross-platform mobile applications 
-                        that provide seamless experiences on iOS and Android.
-                    </p>
-                    <div class="service-tags">
-                        <span>React Native</span>
-                        <span>Flutter</span>
-                        <span>Swift</span>
-                    </div>
-                </div>
-                <div class="service-card reveal">
-                    <div class="service-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
-                            <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
-                            <line x1="12" y1="22.08" x2="12" y2="12"/>
-                        </svg>
-                    </div>
-                    <h3 class="service-title">SaaS Products</h3>
-                    <p class="service-description">
-                        Launch your SaaS idea with a solid technical foundation. 
-                        Payments, auth, dashboards — we handle the stack.
-                    </p>
-                    <div class="service-tags">
-                        <span>SaaS</span>
-                        <span>API</span>
-                        <span>Scaling</span>
-                    </div>
-                </div>
-                <div class="service-card reveal">
-                    <div class="service-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <polyline points="16 18 22 12 16 6"/>
-                            <polyline points="8 6 2 12 8 18"/>
-                        </svg>
-                    </div>
-                    <h3 class="service-title">API Development</h3>
-                    <p class="service-description">
-                        REST and GraphQL APIs designed for performance and developer experience. 
-                        Well-documented, thoroughly tested.
-                    </p>
-                    <div class="service-tags">
-                        <span>REST</span>
-                        <span>GraphQL</span>
-                        <span>Documentation</span>
-                    </div>
-                </div>
-                <div class="service-card reveal">
-                    <div class="service-icon">
-                        <svg viewBox="0 0 64 64" width="64" height="64" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                           <!-- central chip -->
-                           <rect x="22" y="22" width="20" height="20" rx="3"/>
-                           <!-- chip core -->
-                           <rect x="27" y="27" width="10" height="10" rx="1.5"/>
-                           <!-- top pins -->
-                           <path d="M27 22 V16"/>
-                           <path d="M32 22 V14"/>
-                           <path d="M37 22 V16"/>
-                           <!-- bottom pins -->
-                           <path d="M27 42 V48"/>
-                           <path d="M32 42 V50"/>
-                           <path d="M37 42 V48"/>
-                           <!-- left pins -->
-                           <path d="M22 27 H16"/>
-                           <path d="M22 32 H14"/>
-                           <path d="M22 37 H16"/>
-                           <!-- right pins -->
-                           <path d="M42 27 H48"/>
-                           <path d="M42 32 H50"/>
-                           <path d="M42 37 H48"/>
-                           <!-- circuit terminals -->
-                           <circle cx="14" cy="32" r="1.3"/>
-                           <circle cx="50" cy="32" r="1.3"/>
-                           <circle cx="32" cy="14" r="1.3"/>
-                           <circle cx="32" cy="50" r="1.3"/>
-                           <!-- small internal circuit paths -->
-                           <path d="M29 27 V24"/>
-                           <path d="M35 27 V24"/>
-                           <path d="M29 37 V40"/>
-                           <path d="M35 37 V40"/>
-                           <path d="M27 29 H24"/>
-                           <path d="M27 35 H24"/>
-                           <path d="M37 29 H40"/>
-                           <path d="M37 35 H40"/>
-                       </svg>
-                    </div>
-                    <h3 class="service-title">Hardware Development</h3>
-                    <p class="service-description">
-                        Hardware that's actually affordable without compromising quality. 
-                        Designed and built by Cambric.
-                    </p>
-                    <div class="service-tags">
-                        <span>Accsesories</span>
-                        <span>Every Day Use</span>
-                        <span>High Quality</span>
-                    </div>
-                </div>
-                <div class="service-card reveal">
-                    <div class="service-icon">
-                            <svg viewBox="0 0 64 64" width="64" height="64" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                <!-- flask -->
-                                <path d=" M25 9 H39 V24 L51.2 48.2 C52.8 51.4 50.5 55 46.9 55 H17.1 C13.5 55 11.2 51.4 12.8 48.2 L25 24 Z"/>
-                                <!-- flask rim -->
-                                <path d="M23 9 H41"/>
-                                <!-- liquid surface -->
-                                <path d=" M15.2 43.8 C19.5 41.8 23.5 41.2 27.8 42.5 C32.2 43.8 35.5 45.2 39.7 44.3 C43.2 43.6 46.2 42.2 49.2 41.2"/>
-                                <!-- bubbles -->
-                                <circle cx="29" cy="49" r="1.4"/>
-                                <circle cx="36" cy="47" r="1"/>
-                                <circle cx="40" cy="51" r="1.8"/>
-                                <!-- rising bubbles -->
-                                <circle cx="44.5" cy="27" r="1.3"/>
-                                <circle cx="49" cy="21" r="0.9"/>
-                        </svg>
-                    </div>
-                    <h3 class="service-title">Experiments</h3>
-                    <p class="service-description">
-                        Experimenting with software and hardware 
-                        to improve the user experience.
-                    </p>
-                    <div class="service-tags">
-                        <span>User Voting</span>
-                        <span>New ideas</span>
-                        <span>Better Experince</span>
-                    </div>
-                </div>
-                <div class="service-card reveal">
-                    <div class="service-icon">
-                        <svg viewBox="0 0 64 64" width="64" height="64" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                           <!-- controller body -->
-                           <path d=" M17.5 25.5 C20.2 21.8 24.5 20 32 20 C39.5 20 43.8 21.8 46.5 25.5 C49.2 29.2 51.2 38.2 50.8 43.5 C50.5 47.2 48.4 49 45.8 47.2 L40.2 41.8 C38.8 40.5 37.2 40 35.2 40 H28.8 C26.8 40 25.2 40.5 23.8 41.8 L18.2 47.2 C15.6 49 13.5 47.2 13.2 43.5 C12.8 38.2 14.8 29.2 17.5 25.5 Z"/>
-                           <!-- left analog stick -->
-                           <circle cx="24" cy="30" r="3.2"/>
-                           <!-- right analog stick -->
-                           <circle cx="40" cy="30" r="3.2"/>
-                           <!-- center buttons -->
-                           <path d="M29.5 27.5 H34.5"/>
-                           <path d="M30.5 30 H33.5"/>
-                       </svg>
-                    </div>
-                    <h3 class="service-title">Games</h3>
-                    <p class="service-description">
-                        Games For Both Android, Windows And Linux.
-                        Most Available Graphics While Being Mostly local.
-                    </p>
-                    <div class="service-tags">
-                        <span>All operating systems</span>
-                        <span>Mostly Local</span>
-                        <span>High Graphics</span>
-                    </div>
-                </div>
-                <div class="service-card reveal">
-                    <div class="service-icon">
-                     <svg viewBox="0 0 64 64" width="64" height="64" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                     <defs>
-                       <g id="neuron-branch">
-                         <path d=" M32 25.6 C32 22.4 35.4 20.8 35.4 17.2 C35.4 13.8 33.9 11.8 32 9.4 "/>
-                         <circle cx="32" cy="9.4" r="1.8"/>
-                       </g>
-                     </defs>
-                       <!-- central core -->
-                       <circle cx="32" cy="32" r="6.4"/>
-                       <!-- six identical neural branches -->
-                       <use href="#neuron-branch"/>
-                       <use href="#neuron-branch" transform="rotate(60 32 32)"/>
-                       <use href="#neuron-branch" transform="rotate(120 32 32)"/>
-                       <use href="#neuron-branch" transform="rotate(180 32 32)"/>
-                       <use href="#neuron-branch" transform="rotate(240 32 32)"/>
-                       <use href="#neuron-branch" transform="rotate(300 32 32)"/>
-                      </svg>
-                    </div>
-                    <h3 class="service-title">AI Products</h3>
-                    <p class="service-description">
-                        AI Products Are Apps That Its Main Function Has AI Like AI Chat, Simultions.
-                        We Make AI Products With Large Models And For Every Day Use.
-                    </p>
-                    <div class="service-tags">
-                        <span>AI</span>
-                        <span>Simulations</span>
-                        <span>Chats</span>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="services-cta reveal">
-                <div class="cta-content">
-                    <h3>Have a project in mind?</h3>
-                    <p>We take on a limited number of projects to ensure quality. Let's talk about yours.</p>
-                    <a href="#contact" class="btn btn-accent">Start a Conversation</a>
-                </div>
-            </div>
-        </div>
-    </section>
+<div class="mq" aria-hidden="true"><div><span>Local-first</span><span>Privacy by default</span><span>You own your data</span><span>Works offline</span><span>Built for speed</span><span>No telemetry</span><span>Local-first</span><span>Privacy by default</span><span>You own your data</span><span>Works offline</span><span>Built for speed</span><span>No telemetry</span></div></div>
 
+<section id="products"><div class="wrap">
+<div class="sh rv"><span class="lab">Products</span><h2>Five products. One philosophy.</h2><p class="sd">Each product solves a real problem, runs on your own hardware, and works without sending your data anywhere.</p></div>
+<div class="pg">
 
+<article class="pc big rv tilt"><div class="tx">
+<div class="top"><img class="lg" src="img/veyro.png" alt="Veyro and Digital Saver logo"><span class="ver">Prototype</span></div>
+<h3>Veyro &amp; Digital Saver</h3><p class="pt">A privacy-first smartwatch and its companion app</p>
+<p class="pd">Veyro is a health-tracking watch built on ESP32 hardware, and Digital Saver is the Flutter app that pairs with it over Bluetooth. History lives on your phone, there is no account, and everything works without a cloud service.</p>
+<ul><li>Live and stored heart rate, SpO2 estimate, HRV, steps and activity</li><li>Health hub: hydration, caffeine, fasting timer, mood, workouts and breathing guides</li><li>Alarms, reminders and medication times, also synced to the watch</li><li>App lock, emergency contact card and watch-face preview</li></ul>
+<div class="tags"><span>Flutter</span><span>ESP32-S3</span><span>ESP-IDF</span><span>LVGL</span><span>Bluetooth LE</span></div>
+<div class="ft"><span class="st"><i class="dot y"></i>Prototype · the app has 426 passing tests</span><a class="btn sm" href="https://github.com/Cambric-software/Digital-saver" target="_blank" rel="noopener">View project →</a></div></div>
+<div class="watch" aria-hidden="true"><svg viewBox="0 0 280 320"><rect x="95" y="0" width="90" height="60" rx="14" fill="#18181c"/><rect x="95" y="260" width="90" height="60" rx="14" fill="#18181c"/><rect x="30" y="50" width="220" height="220" rx="56" fill="#0a0a0c" stroke="#27272a" stroke-width="4"/><rect x="46" y="66" width="188" height="188" rx="44" fill="#111118"/><g class="beat"><path d="M140 112c-9-14-30-6-26 12 3 14 20 24 26 30 6-6 23-16 26-30 4-18-17-26-26-12z" fill="#e63946"/></g><polyline class="ecg" points="62,200 100,200 112,176 126,224 140,190 152,200 218,200" fill="none" stroke="#67e8f9" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><text x="140" y="240" fill="#a1a1aa" font-size="13" text-anchor="middle" font-family="Inter">72 BPM</text></svg></div>
+</article>
 
-    <!-- About Section -->
-    <section id="about" class="section">
-        <div class="container">
-            <div class="about-grid">
-                <div class="about-content reveal">
-                    <span class="section-label">About Us</span>
-                    <h2 class="section-title">Built for Quality</h2>
-                    <p class="about-text">
-                        Cambric started with a simple belief: good software and hardware doesn't have to be complicated.
-                        We focus on clean architecture, thoughtful design, and code that others can maintain.
-                    </p>
-                    <p class="about-text">
-                        We take on client work to fund our own products. This hybrid model means we're 
-                        selective about what we build — for others and for ourselves. Every project gets 
-                        our full attention.
-                    </p>
-                    <div class="about-values">
-                        <div class="value-item">
-                            <span class="value-number">01</span>
-                            <div>
-                                <h4>Quality First</h4>
-                                <p>We'd rather deliver one excellent thing than five mediocre ones.</p>
-                            </div>
-                        </div>
-                        <div class="value-item">
-                            <span class="value-number">02</span>
-                            <div>
-                                <h4>Clear Communication</h4>
-                                <p>No jargon, no surprises. You'll always know where your project stands.</p>
-                            </div>
-                        </div>
-                        <div class="value-item">
-                            <span class="value-number">03</span>
-                            <div>
-                                <h4>Ship Fast, Iterate</h4>
-                                <p>We believe in momentum. Working beats perfect plans.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="about-stats reveal">
-                    <div class="stat-card">
-                        <span class="stat-number" data-target="28">0</span>
-                        <span class="stat-plus">+</span>
-                        <span class="stat-label">Coding Languages</span>
-                    </div>
-                    <div class="stat-card">
-                        <span class="stat-number" data-target="20">0</span>
-                        <span class="stat-plus">%</span>
-                        <span class="stat-label">Cheaper</span>
-                        <span class="stat-label">Than Other Options</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<article class="pc rv tilt" style="--d:.05s"><div class="top"><img class="lg" src="img/maxtools.png" alt="Max Tools logo"><span class="ver">v0.1.0</span></div>
+<h3>Max Tools</h3><p class="pt">All-in-one toolkit for developers, freelancers and business users</p>
+<p class="pd">One searchable, keyboard-driven app that replaces a pile of single-purpose utilities. Press Ctrl+K, type what you want in plain English, and it picks the right tool, even when you mistype.</p>
+<ul><li>21 real tools: password vault, antivirus scan, file encryption and shredder, PDF, QR, API tester and more</li><li>Variables carry one tool's result into the next</li><li>Self-updating installers with one-click rollback</li></ul>
+<div class="tags"><span>Windows</span><span>Linux</span><span>Android</span><span>Flutter</span><span>Offline</span></div>
+<div class="ft"><span class="st"><i class="dot y"></i>Pre-release · first public build coming</span><a class="btn sm" href="https://github.com/Cambric-software/Max-Tools" target="_blank" rel="noopener">View project →</a></div></article>
 
-    <!-- Contact Section -->
-    <section id="contact" class="section section-accent">
-        <div class="container">
-            <div class="contact-content reveal">
-                <h2 class="contact-title">Let's Build Something</h2>
-                <p class="contact-description">
-                    Have a project in mind? Interested in our products? 
-                    We'd love to hear from you.
-                </p>
-                <div class="contact-methods">
-                    <a href="mailto:asser.k.dev@gmail.com" class="contact-item">
-                        <div class="contact-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                                <polyline points="22,6 12,13 2,6"/>
-                            </svg>
-                        </div>
-                        <div>
-                            <span class="contact-label">Email</span>
-                            <span class="contact-value">asser.k.dev@gmail.com</span>
-                        </div>
-                    </a>
-                    <a href="mailto:asserk651@gmail.com" class="contact-item">
-                        <div class="contact-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-                            </svg>
-                        </div>
-                        <div>
-                            <span class="contact-label">Secondary Email</span>
-                            <span class="contact-value">asserk651@gmail.com</span>
-                        </div>
-                    </a>
-                    <a href="tel:+201007379630" class="contact-item">
-                        <div class="contact-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-                            </svg>
-                        </div>
-                        <div>
-                            <span class="contact-label">Phone</span>
-                            <span class="contact-value">+20 1007379630</span>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
+<article class="pc rv tilt" style="--d:.1s"><div class="top"><img class="lg" src="img/webexplorer.png" alt="Web Explorer logo"><span class="ver">Live</span></div>
+<h3>Web Explorer</h3><p class="pt">Discover the internet again</p>
+<p class="pd">One click takes you to a real, independent website that a robot found, checked and sorted. The robot runs every hour on free GitHub hosting, with no server and no accounts.</p>
+<ul><li>Filter by category and era, from sites older than Google to today</li><li>Time Warp slider, Galaxy map, Stumble Bar and daily mystery puzzle</li><li>Passport, badges, votes and lists saved only in your browser</li></ul>
+<div class="tags"><span>Python</span><span>GitHub Actions</span><span>Zero servers</span><span>Privacy-first</span></div>
+<div class="ft"><span class="st"><i class="dot"></i>Live</span><a class="btn sm" href="https://cambric-software.github.io/web-explorer/" target="_blank" rel="noopener">Launch →</a></div></article>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <span class="footer-logo">CAMBRIC</span>
-                    <p class="footer-tagline">CAMBRIC FOR ALL TO ALL.</p>
-                </div>
-                <div class="footer-links">
-                    <h4>Contact</h4>
-                    <ul>
-                        <li><a href="mailto:asser.k.dev@gmail.com">asser.k.dev@gmail.com</a></li>
-                        <li><a href="mailto:asserk651@gmail.com">asserk651@gmail.com</a></li>
-                        <li><a href="tel:+201007379630">+20 1007379630</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025-2026 Cambric. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-    <!-- Donate Modal -->
-    <div id="donateModal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn">&times;</span>
-            <h2>Support CAMBRIC</h2>
-            <p>You can donate using:</p>
+<article class="pc rv tilt" style="--d:.05s"><div class="top"><img class="lg" src="img/ceditor.png" alt="C-Editor logo"><span class="ver">Desktop</span></div>
+<h3>C-Editor</h3><p class="pt">An offline creative suite for Windows</p>
+<p class="pd">Six departments in one desktop app. Everything runs on your computer, so your files never leave your machine, with no account or subscription.</p>
+<ul><li>Documents, design, spreadsheet, slides, video and animation</li><li>Exports to PDF, DOCX, PNG, SVG, CSV, GIF and MP4</li><li>Formulas, pivot tables, track changes and a multi-track video timeline</li></ul>
+<div class="tags"><span>Windows</span><span>Python</span><span>Offline</span><span>6 departments</span></div>
+<div class="ft"><span class="st"><i class="dot c"></i>In development</span><a class="btn sm" href="https://github.com/Cambric-software/C-EDITOR" target="_blank" rel="noopener">View project →</a></div></article>
 
-            <div class="donate-option">
-                <strong>InstaPay</strong>
-                <p onclick="copyNumber()">01007379630 📋</p>
-            </div>
-            <div class="donate-option">
-                <strong>Vodafone Cash</strong>
-                <p onclick="copyNumber()">01007379630 📋</p>
-            </div>
-        </div>
-    </div>
-    <div id="toast">Copied to clipboard!</div>
-    <script src="js/main.js"></script>
+<article class="pc rv tilt" style="--d:.1s"><div class="top"><img class="lg" src="img/cambric.png" alt="Cambric logo"><span class="ver">Early</span></div>
+<h3>Cambric AI</h3><p class="pt">Experiments in AI that runs on your hardware</p>
+<p class="pd">This is where our AI research starts. It is the testing ground for local models and tooling that feeds into Talven, our larger AI platform.</p>
+<ul><li>Local execution instead of cloud inference</li><li>Groundwork for the Talven model families</li></ul>
+<div class="tags"><span>Research</span><span>Local models</span></div>
+<div class="ft"><span class="st"><i class="dot c"></i>Early experiments</span><a class="btn sm" href="https://github.com/Cambric-software/Cambric-ai" target="_blank" rel="noopener">Follow →</a></div></article>
+</div></div></section>
+
+<section class="dark" id="numbers"><div class="wrap">
+<div class="sh rv"><span class="lab">By the numbers</span><h2>Built carefully, shipped in the open</h2></div>
+<div class="stats">
+<div class="sc rv"><div class="sn"><span data-n="5">0</span></div><span class="sl">Products in the studio</span></div>
+<div class="sc rv" style="--d:.08s"><div class="sn"><span data-n="21">0</span></div><span class="sl">Real tools in Max Tools</span></div>
+<div class="sc rv" style="--d:.16s"><div class="sn"><span data-n="426">0</span></div><span class="sl">Passing tests in the Digital Saver app</span></div>
+<div class="sc rv" style="--d:.24s"><div class="sn"><span data-n="24">0</span><em>/7</em></div><span class="sl">Hourly discovery robot, always on</span></div>
+</div>
+<div class="vals">
+<div class="v rv"><b>01</b><h4>Local-first</h4><p>Apps run on your device, so they stay fast and keep working offline.</p></div>
+<div class="v rv" style="--d:.1s"><b>02</b><h4>Private by default</h4><p>No accounts, no telemetry. Your data stays on your machine unless you export it.</p></div>
+<div class="v rv" style="--d:.2s"><b>03</b><h4>Honest engineering</h4><p>Our docs say what is finished and what is not. We would rather under-promise than ship a claim we cannot back up.</p></div>
+</div></div></section>
+
+<section id="talven"><div class="wrap"><div class="tv rv">
+<span class="lab">Coming next</span><h2>Talven</h2>
+<p class="sd" style="max-width:640px;margin:auto">A local-first AI assistant for coding and productivity that runs on your own computer. Download it once, own your models for life, with no subscription and no usage caps.</p>
+<div class="fam">
+<div class="fm"><b>Ember</b><small>Free</small><p>Fast, lightweight models that run on modest hardware.</p></div>
+<div class="fm"><b>Forge</b><small>Coding</small><p>Code generation, refactoring, debugging and architecture help.</p></div>
+<div class="fm"><b>Atlas</b><small>Reasoning</small><p>Long-context planning, research and technical analysis.</p></div>
+<div class="fm"><b>Crown</b><small>Flagship</small><p>Our most capable models for reasoning and coding.</p></div>
+</div>
+<span class="badge"><i></i>In design · follow progress on GitHub</span>
+</div></div></section>
+
+<section class="dark" id="contact"><div class="wrap">
+<div class="sh rv"><span class="lab">Contact</span><h2>Let's build something</h2><p class="sd">Have a project in mind or a question about a product? Reach out.</p></div>
+<div class="cm">
+<a class="ci rv" href="mailto:asser.k.dev@gmail.com"><i>✉</i><div><small>Email</small>asser.k.dev@gmail.com</div></a>
+<a class="ci rv" href="mailto:asserk651@gmail.com" style="--d:.08s"><i>✉</i><div><small>Alternate email</small>asserk651@gmail.com</div></a>
+<a class="ci rv" href="https://github.com/Cambric-software" target="_blank" rel="noopener" style="--d:.16s"><i>⌥</i><div><small>GitHub</small>github.com/Cambric-software</div></a>
+</div></div></section>
+
+<footer><div class="wrap"><b>CAMBRIC</b><p>LOCAL · PRIVATE · YOURS</p><p style="margin-top:18px">© 2026 Cambric Software &amp; Hardware Studios. Founder: Asser Karim.</p></div></footer>
+
+<dialog id="dlg"><h3>Support Cambric</h3><p style="color:#a1a1aa;margin-top:6px">Tap a number to copy it.</p>
+<button class="do" data-n="01007379630"><small>InstaPay</small><p>01007379630</p></button>
+<button class="do" data-n="01007379630"><small>Vodafone Cash</small><p>01007379630</p></button>
+<button class="btn sm" id="cl">Close</button></dialog>
+
+<script>
+(function(){
+var $=function(s){return document.querySelector(s)},$$=function(s){return document.querySelectorAll(s)},rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+$$('.rv').forEach(function(e){io.observe(e)});
+/* counters */
+var co=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;co.unobserve(e.target);var n=+e.target.dataset.n,t0=performance.now();
+(function f(t){var p=Math.min((t-t0)/1400,1);e.target.textContent=Math.round(n*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(f)})(t0)})},{threshold:.6});
+$$('[data-n]').forEach(function(e){co.observe(e)});
+/* progress + active link */
+var secs=['products','numbers','talven','contact'];
+addEventListener('scroll',function(){var h=document.documentElement;$('#bar').style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';
+secs.forEach(function(id){var el=document.getElementById(id),r=el.getBoundingClientRect(),a=document.querySelector('nav a[href="#'+id+'"]');if(a)a.classList.toggle('on',r.top<240&&r.bottom>240)})},{passive:true});
+/* typewriter */
+var words=['private apps.','offline-first tools.','hardware you control.','local AI.','software you own.'],wi=0,ci=0,del=false,ty=$('#ty');
+function tick(){var w=words[wi];ci+=del?-1:1;ty.textContent=w.slice(0,ci);var d=del?35:75;
+if(!del&&ci===w.length){del=true;d=1500}else if(del&&ci===0){del=false;wi=(wi+1)%words.length;d=350}setTimeout(tick,d)}
+if(rm)ty.textContent=words[0];else tick();
+/* tilt + spotlight */
+$$('.tilt').forEach(function(c){c.addEventListener('pointermove',function(e){var r=c.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top;
+c.style.setProperty('--mx',x+'px');c.style.setProperty('--my',y+'px');
+if(!rm&&!c.classList.contains('big')){c.style.transform='perspective(900px) rotateX('+((.5-y/r.height)*6)+'deg) rotateY('+((x/r.width-.5)*6)+'deg) translateY(-6px)'}});
+c.addEventListener('pointerleave',function(){c.style.transform=''})});
+/* modal */
+var d=$('#dlg');$('#don').onclick=function(){d.showModal()};$('#cl').onclick=function(){d.close()};
+d.addEventListener('click',function(e){if(e.target===d)d.close()});
+$$('.do').forEach(function(b){b.onclick=function(){try{navigator.clipboard.writeText(b.dataset.n)}catch(x){}var p=b.querySelector('p');p.textContent='Copied ✓';setTimeout(function(){p.textContent=b.dataset.n},1300)}});
+/* particle network */
+if(rm)return;var c=$('#cv'),x=c.getContext('2d'),P=[],m={x:-999,y:-999},W,H,D;
+function size(){D=devicePixelRatio||1;W=c.clientWidth;H=c.clientHeight;c.width=W*D;c.height=H*D;x.setTransform(D,0,0,D,0,0);P=[];for(var i=0,n=Math.min(90,W*H/14000|0);i<n;i++)P.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.4,vy:(Math.random()-.5)*.4})}
+size();addEventListener('resize',size);
+c.parentNode.addEventListener('pointermove',function(e){var r=c.getBoundingClientRect();m.x=e.clientX-r.left;m.y=e.clientY-r.top});
+(function draw(){x.clearRect(0,0,W,H);
+P.forEach(function(p,i){p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1;
+var dx=p.x-m.x,dy=p.y-m.y,dm=Math.hypot(dx,dy);if(dm<140){p.x+=dx/dm*1.2;p.y+=dy/dm*1.2}
+for(var j=i+1;j<P.length;j++){var q=P[j],dd=Math.hypot(p.x-q.x,p.y-q.y);if(dd<130){x.globalAlpha=(1-dd/130)*.4;x.strokeStyle='#67e8f9';x.beginPath();x.moveTo(p.x,p.y);x.lineTo(q.x,q.y);x.stroke()}}
+x.globalAlpha=.85;x.fillStyle='#67e8f9';x.beginPath();x.arc(p.x,p.y,1.8,0,6.3);x.fill()});
+requestAnimationFrame(draw)})();
+})();
+</script>
 </body>
 </html>
