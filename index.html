@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Cambric — Software &amp; Hardware Studios</title>
 <meta name="description" content="Cambric builds private, local-first software and hardware: Veyro, Max Tools, Web Explorer, C-Editor and Cambric AI.">
-<link rel="icon" href="img/cambric.png">
+<link rel="icon" href="cambric.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
@@ -128,18 +128,70 @@ dialog::backdrop{background:rgba(0,0,0,.75);backdrop-filter:blur(5px)}
 .do:hover{background:rgba(103,232,249,.1)}.do p{color:var(--ac);font-weight:600;font-size:18px}.do small{color:var(--t3)}
 @media(max-width:820px){nav a.l{display:none}.pc.big{flex-direction:column}.watch{flex:none}section{padding:80px 0}.pg{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+
+.demo{display:grid;grid-template-columns:1.2fr 1fr;gap:24px}
+.win{background:var(--card);border:1px solid var(--bd);border-radius:16px;overflow:hidden}
+.win .bar{display:flex;align-items:center;gap:7px;padding:12px 16px;background:var(--bg3);border-bottom:1px solid var(--bd2);font-size:12px;color:var(--t3)}
+.win .bar i{width:10px;height:10px;border-radius:50%;background:#3f3f46}.win .bar span{margin-left:8px}
+.win iframe{width:100%;height:440px;border:0;background:#fff;display:block}
+.win .cap{padding:14px 18px;font-size:14px;color:var(--t2);display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.pal{padding:24px;min-height:300px;font-family:ui-monospace,Consolas,monospace;font-size:15px}
+.pal .in{background:var(--bg);border:1px solid var(--ac);border-radius:10px;padding:14px 16px;color:#fff;box-shadow:0 0 30px rgba(103,232,249,.12)}
+.pal .in u{display:inline-block;width:2px;height:1em;background:var(--ac);vertical-align:-2px;margin-left:2px;animation:blink 1s steps(1) infinite;text-decoration:none}
+.pal .res{margin-top:14px;padding:14px 16px;border-radius:10px;background:var(--bg3);color:var(--t2);font-size:13px;opacity:0;transform:translateY(8px);transition:.4s;line-height:1.9}
+.pal .res.on{opacity:1;transform:none}.pal .res b{color:var(--ac)}
+.shots{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:20px}.shots img{width:100%;border-radius:12px;border:1px solid var(--bd)}
+.cmp{width:100%;border-collapse:separate;border-spacing:0;background:var(--card);border:1px solid var(--bd2);border-radius:16px;overflow:hidden;font-size:15px}
+.cmp th,.cmp td{padding:16px 22px;text-align:left;border-bottom:1px solid var(--bd2)}.cmp tr:last-child td{border-bottom:0}
+.cmp th{background:var(--bg3);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--t3)}.cmp th:last-child{color:var(--ac)}
+.cmp td:first-child{font-weight:600}.cmp td:nth-child(2){color:var(--t3)}.cmp td:last-child{color:#fff}.cmp td:last-child::before{content:"✓ ";color:var(--ok)}
+.tw{overflow-x:auto}
+.story{display:grid;grid-template-columns:200px 1fr;gap:48px;align-items:center;max-width:900px;margin:auto}
+.mono{width:200px;height:200px;border-radius:50%;background:linear-gradient(135deg,var(--ac),#6366f1);display:grid;place-items:center;font-size:76px;font-weight:800;color:var(--bg);box-shadow:0 0 60px rgba(103,232,249,.25);animation:float 8s ease-in-out infinite}
+.story p{color:var(--t2);line-height:1.85;margin-bottom:14px}.story p strong{color:#fff}
+.dl{text-align:center;max-width:680px;margin:auto;background:var(--card);border:1px solid var(--bd);border-radius:24px;padding:48px 32px}
+.os{display:inline-block;padding:6px 14px;border-radius:99px;background:rgba(103,232,249,.1);color:var(--ac);font-size:13px;font-weight:600;margin-bottom:16px}
+.dl .acts{margin-top:22px}
+.fund{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;max-width:1000px;margin:0 auto 30px}
+.fund div{background:var(--card);border:1px solid var(--bd2);border-radius:16px;padding:24px;transition:.25s}.fund div:hover{transform:translateY(-5px);border-color:var(--ac)}
+.fund b{display:block;margin-bottom:6px}.fund p{color:var(--t2);font-size:14px;line-height:1.6}.fund i{font-style:normal;font-size:26px}
+.faq{max-width:780px;margin:auto;display:grid;gap:12px}
+.faq details{background:var(--card);border:1px solid var(--bd2);border-radius:14px;padding:0 22px;transition:border-color .2s}.faq details[open]{border-color:var(--ac)}
+.faq summary{cursor:pointer;list-style:none;padding:20px 0;font-weight:600;display:flex;justify-content:space-between;gap:16px}.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";color:var(--ac);font-size:22px;line-height:1;transition:transform .25s}.faq details[open] summary::after{transform:rotate(45deg)}
+.faq p{color:var(--t2);line-height:1.8;padding-bottom:20px}
+@media(max-width:820px){.demo{grid-template-columns:1fr}.story{grid-template-columns:1fr;text-align:center}.mono{margin:auto;width:150px;height:150px;font-size:56px}.cmp th,.cmp td{padding:12px 14px;font-size:14px}}
+
+#glow{position:fixed;left:0;top:0;width:420px;height:420px;margin:-210px 0 0 -210px;border-radius:50%;background:radial-gradient(circle,rgba(103,232,249,.09),transparent 65%);pointer-events:none;z-index:1;will-change:transform}
+h2{position:relative}.sh h2::after{content:"";display:block;width:0;height:3px;border-radius:2px;margin:16px auto 0;background:linear-gradient(90deg,var(--ac),transparent);transition:width 1s .3s cubic-bezier(.2,.8,.2,1)}.rv.in h2::after,.sh.in h2::after{width:90px}
+.chips{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:44px}
+.chip{display:flex;align-items:center;gap:10px;padding:8px 18px 8px 8px;border:1px solid var(--bd);border-radius:99px;background:rgba(17,17,20,.7);backdrop-filter:blur(8px);font-size:14px;font-weight:600;animation:bob 5s ease-in-out infinite;animation-delay:var(--d);transition:.2s}
+.chip img{width:34px;height:34px;border-radius:10px}.chip:hover{border-color:var(--ac);color:var(--ac);transform:translateY(-4px)}
+@keyframes bob{50%{transform:translateY(-8px)}}
+.pc.big{border-color:transparent;background:linear-gradient(var(--card),var(--card)) padding-box,conic-gradient(from var(--a,0deg),#27272a,var(--ac),#6366f1,#27272a) border-box;border:1px solid transparent;animation:rot 8s linear infinite}
+@property --a{syntax:"<angle>";inherits:false;initial-value:0deg}@keyframes rot{to{--a:360deg}}
+.burger{display:none;width:44px;height:44px;border:1px solid var(--bd);border-radius:12px;background:none;cursor:pointer;flex-direction:column;justify-content:center;gap:5px;align-items:center}.burger span{width:18px;height:2px;background:#fff;transition:.25s}
+nav.open .burger span:first-child{transform:translateY(3.5px) rotate(45deg)}nav.open .burger span:last-child{transform:translateY(-3.5px) rotate(-45deg)}
+#up{position:fixed;right:20px;bottom:calc(20px + env(safe-area-inset-bottom));width:48px;height:48px;border-radius:50%;border:1px solid var(--bd);background:rgba(17,17,20,.85);backdrop-filter:blur(8px);color:var(--ac);font-size:20px;cursor:pointer;opacity:0;pointer-events:none;transform:translateY(12px);transition:.3s;z-index:40}#up.on{opacity:1;pointer-events:auto;transform:none}#up:hover{background:var(--ac);color:var(--bg)}
+.fg{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:40px;text-align:left;margin-bottom:40px}.fg a{display:block;color:var(--t3);padding:4px 0;transition:.2s}.fg a:hover{color:var(--ac);transform:translateX(4px)}.fg h5{color:#fff;font-size:13px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px}.fg p{max-width:300px;line-height:1.7}
+.fb{border-top:1px solid var(--bd2);padding-top:24px}
+@media(max-width:820px){.burger{display:flex}nav .btn.sm{display:none}nav.open .wrap{flex-wrap:wrap;height:auto;padding-bottom:18px;gap:0}nav.open .wrap{min-height:72px}nav.open a.l{display:block;width:100%;order:9;padding:12px 0;border-top:1px solid var(--bd2);font-size:16px}nav .wrap{gap:12px}.fg{grid-template-columns:1fr;text-align:center}.fg p{margin:auto}.chip{font-size:13px}}
+@media(hover:none){#glow{display:none}}
 </style>
+<link rel="canonical" href="https://cambric-software.github.io/cambric-software/">
+<meta property="og:type" content="website"><meta property="og:title" content="Cambric — Local · Private · Yours"><meta property="og:description" content="Private, local-first software and hardware. Veyro, Max Tools, Web Explorer, C-Editor and Talven."><meta property="og:image" content="https://cambric-software.github.io/cambric-software/cambric.png"><meta property="og:url" content="https://cambric-software.github.io/cambric-software/"><meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Cambric Software & Hardware Studios","url":"https://cambric-software.github.io/cambric-software/","logo":"https://cambric-software.github.io/cambric-software/cambric.png","founder":{"@type":"Person","name":"Asser Karim"},"sameAs":["https://github.com/Cambric-software"]}</script>
 </head>
 <body>
 <div id="bar"></div>
 <nav><div class="wrap">
-<a class="brand" href="#top"><img src="img/cambric.png" alt="Cambric logo">CAMBRIC</a>
-<a class="l" href="#products">Products</a><a class="l" href="#numbers">By the numbers</a><a class="l" href="#talven">Talven</a><a class="l" href="#contact">Contact</a>
-<button class="btn sm" id="don">Support us</button>
+<a class="brand" href="#top"><img src="cambric.png" alt="Cambric logo">CAMBRIC</a>
+<a class="l" href="#products">Products</a><a class="l" href="#why">Why local</a><a class="l" href="#story">Story</a><a class="l" href="#faq">FAQ</a><a class="l" href="#contact">Contact</a>
+<button class="btn sm" id="don">Support us</button><button class="burger" id="bg" aria-label="Menu" aria-expanded="false"><span></span><span></span></button>
 </div></nav>
 
 <header class="hero" id="top">
-<div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div><div class="grid"></div><canvas id="cv" aria-hidden="true"></canvas>
+<div id="glow"></div><div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div><div class="grid"></div><canvas id="cv" aria-hidden="true"></canvas>
 <div class="hc">
 <span class="badge rv"><i></i>Software &amp; Hardware Studios</span>
 <h1 class="rv" style="--d:.1s">CAMBRIC</h1>
@@ -147,7 +199,7 @@ dialog::backdrop{background:rgba(0,0,0,.75);backdrop-filter:blur(5px)}
 <div class="type rv" style="--d:.3s">We build <b id="ty"></b><u></u></div>
 <p class="hd rv" style="--d:.4s">An independent studio making fast, private, local-first apps and hardware. No accounts, no subscriptions, no cloud dependence. Your data stays on your device.</p>
 <div class="acts rv" style="--d:.5s"><a class="btn w" href="#products">Explore products →</a><a class="btn" href="https://github.com/Cambric-software" target="_blank" rel="noopener">GitHub</a></div>
-</div><div class="hint"></div>
+<div class="chips rv" style="--d:.6s"><a class="chip" href="#products" style="--d:0s"><img src="veyro.png" alt="">Veyro</a><a class="chip" href="#products" style="--d:-1s"><img src="maxtools.png" alt="">Max Tools</a><a class="chip" href="#products" style="--d:-2s"><img src="webexplorer.png" alt="">Web Explorer</a><a class="chip" href="#products" style="--d:-3s"><img src="ceditor.png" alt="">C-Editor</a><a class="chip" href="#talven" style="--d:-4s"><img src="cambric.png" alt="">Talven</a></div></div><div class="hint"></div>
 </header>
 
 <div class="mq" aria-hidden="true"><div><span>Local-first</span><span>Privacy by default</span><span>You own your data</span><span>Works offline</span><span>Built for speed</span><span>No telemetry</span><span>Local-first</span><span>Privacy by default</span><span>You own your data</span><span>Works offline</span><span>Built for speed</span><span>No telemetry</span></div></div>
@@ -157,7 +209,7 @@ dialog::backdrop{background:rgba(0,0,0,.75);backdrop-filter:blur(5px)}
 <div class="pg">
 
 <article class="pc big rv tilt"><div class="tx">
-<div class="top"><img class="lg" src="img/veyro.png" alt="Veyro and Digital Saver logo"><span class="ver">Prototype</span></div>
+<div class="top"><img class="lg" src="veyro.png" alt="Veyro and Digital Saver logo"><span class="ver">Prototype</span></div>
 <h3>Veyro &amp; Digital Saver</h3><p class="pt">A privacy-first smartwatch and its companion app</p>
 <p class="pd">Veyro is a health-tracking watch built on ESP32 hardware, and Digital Saver is the Flutter app that pairs with it over Bluetooth. History lives on your phone, there is no account, and everything works without a cloud service.</p>
 <ul><li>Live and stored heart rate, SpO2 estimate, HRV, steps and activity</li><li>Health hub: hydration, caffeine, fasting timer, mood, workouts and breathing guides</li><li>Alarms, reminders and medication times, also synced to the watch</li><li>App lock, emergency contact card and watch-face preview</li></ul>
@@ -166,28 +218,28 @@ dialog::backdrop{background:rgba(0,0,0,.75);backdrop-filter:blur(5px)}
 <div class="watch" aria-hidden="true"><svg viewBox="0 0 280 320"><rect x="95" y="0" width="90" height="60" rx="14" fill="#18181c"/><rect x="95" y="260" width="90" height="60" rx="14" fill="#18181c"/><rect x="30" y="50" width="220" height="220" rx="56" fill="#0a0a0c" stroke="#27272a" stroke-width="4"/><rect x="46" y="66" width="188" height="188" rx="44" fill="#111118"/><g class="beat"><path d="M140 112c-9-14-30-6-26 12 3 14 20 24 26 30 6-6 23-16 26-30 4-18-17-26-26-12z" fill="#e63946"/></g><polyline class="ecg" points="62,200 100,200 112,176 126,224 140,190 152,200 218,200" fill="none" stroke="#67e8f9" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><text x="140" y="240" fill="#a1a1aa" font-size="13" text-anchor="middle" font-family="Inter">72 BPM</text></svg></div>
 </article>
 
-<article class="pc rv tilt" style="--d:.05s"><div class="top"><img class="lg" src="img/maxtools.png" alt="Max Tools logo"><span class="ver">v0.1.0</span></div>
+<article class="pc rv tilt" style="--d:.05s"><div class="top"><img class="lg" src="maxtools.png" alt="Max Tools logo"><span class="ver">v0.1.0</span></div>
 <h3>Max Tools</h3><p class="pt">All-in-one toolkit for developers, freelancers and business users</p>
 <p class="pd">One searchable, keyboard-driven app that replaces a pile of single-purpose utilities. Press Ctrl+K, type what you want in plain English, and it picks the right tool, even when you mistype.</p>
 <ul><li>21 real tools: password vault, antivirus scan, file encryption and shredder, PDF, QR, API tester and more</li><li>Variables carry one tool's result into the next</li><li>Self-updating installers with one-click rollback</li></ul>
 <div class="tags"><span>Windows</span><span>Linux</span><span>Android</span><span>Flutter</span><span>Offline</span></div>
 <div class="ft"><span class="st"><i class="dot y"></i>Pre-release · first public build coming</span><a class="btn sm" href="https://github.com/Cambric-software/Max-Tools" target="_blank" rel="noopener">View project →</a></div></article>
 
-<article class="pc rv tilt" style="--d:.1s"><div class="top"><img class="lg" src="img/webexplorer.png" alt="Web Explorer logo"><span class="ver">Live</span></div>
+<article class="pc rv tilt" style="--d:.1s"><div class="top"><img class="lg" src="webexplorer.png" alt="Web Explorer logo"><span class="ver">Live</span></div>
 <h3>Web Explorer</h3><p class="pt">Discover the internet again</p>
 <p class="pd">One click takes you to a real, independent website that a robot found, checked and sorted. The robot runs every hour on free GitHub hosting, with no server and no accounts.</p>
 <ul><li>Filter by category and era, from sites older than Google to today</li><li>Time Warp slider, Galaxy map, Stumble Bar and daily mystery puzzle</li><li>Passport, badges, votes and lists saved only in your browser</li></ul>
 <div class="tags"><span>Python</span><span>GitHub Actions</span><span>Zero servers</span><span>Privacy-first</span></div>
 <div class="ft"><span class="st"><i class="dot"></i>Live</span><a class="btn sm" href="https://cambric-software.github.io/web-explorer/" target="_blank" rel="noopener">Launch →</a></div></article>
 
-<article class="pc rv tilt" style="--d:.05s"><div class="top"><img class="lg" src="img/ceditor.png" alt="C-Editor logo"><span class="ver">Desktop</span></div>
+<article class="pc rv tilt" style="--d:.05s"><div class="top"><img class="lg" src="ceditor.png" alt="C-Editor logo"><span class="ver">Desktop</span></div>
 <h3>C-Editor</h3><p class="pt">An offline creative suite for Windows</p>
 <p class="pd">Six departments in one desktop app. Everything runs on your computer, so your files never leave your machine, with no account or subscription.</p>
 <ul><li>Documents, design, spreadsheet, slides, video and animation</li><li>Exports to PDF, DOCX, PNG, SVG, CSV, GIF and MP4</li><li>Formulas, pivot tables, track changes and a multi-track video timeline</li></ul>
 <div class="tags"><span>Windows</span><span>Python</span><span>Offline</span><span>6 departments</span></div>
 <div class="ft"><span class="st"><i class="dot c"></i>In development</span><a class="btn sm" href="https://github.com/Cambric-software/C-EDITOR" target="_blank" rel="noopener">View project →</a></div></article>
 
-<article class="pc rv tilt" style="--d:.1s"><div class="top"><img class="lg" src="img/cambric.png" alt="Cambric logo"><span class="ver">Early</span></div>
+<article class="pc rv tilt" style="--d:.1s"><div class="top"><img class="lg" src="cambric.png" alt="Cambric logo"><span class="ver">Early</span></div>
 <h3>Cambric AI</h3><p class="pt">Experiments in AI that runs on your hardware</p>
 <p class="pd">This is where our AI research starts. It is the testing ground for local models and tooling that feeds into Talven, our larger AI platform.</p>
 <ul><li>Local execution instead of cloud inference</li><li>Groundwork for the Talven model families</li></ul>
@@ -195,6 +247,13 @@ dialog::backdrop{background:rgba(0,0,0,.75);backdrop-filter:blur(5px)}
 <div class="ft"><span class="st"><i class="dot c"></i>Early experiments</span><a class="btn sm" href="https://github.com/Cambric-software/Cambric-ai" target="_blank" rel="noopener">Follow →</a></div></article>
 </div></div></section>
 
+<section id="try"><div class="wrap">
+<div class="sh rv"><span class="lab">See it in action</span><h2>Try it before you read about it</h2><p class="sd">Web Explorer is live, so the window below is the real site. Max Tools is still pre-release, so its panel is an illustration of the command palette.</p></div>
+<div class="demo">
+<div class="win rv"><div class="bar"><i></i><i></i><i></i><span>cambric-software.github.io/web-explorer</span></div><iframe src="https://cambric-software.github.io/web-explorer/" loading="lazy" title="Live preview of Web Explorer"></iframe><div class="cap"><span>Live · press EXPLORE to jump somewhere new</span><a href="https://cambric-software.github.io/web-explorer/" target="_blank" rel="noopener" style="color:var(--ac)">Open full site →</a></div></div>
+<div class="win rv" style="--d:.1s"><div class="bar"><i></i><i></i><i></i><span>Max Tools · Ctrl+K · illustration</span></div><div class="pal"><div class="in">› <span id="pt"></span><u></u></div><div class="res" id="pr"></div></div><div class="cap"><span>Type plain English. It picks the tool and asks if unsure.</span></div></div>
+</div><div class="shots" id="shots"></div>
+</div></section>
 <section class="dark" id="numbers"><div class="wrap">
 <div class="sh rv"><span class="lab">By the numbers</span><h2>Built carefully, shipped in the open</h2></div>
 <div class="stats">
@@ -209,7 +268,32 @@ dialog::backdrop{background:rgba(0,0,0,.75);backdrop-filter:blur(5px)}
 <div class="v rv" style="--d:.2s"><b>03</b><h4>Honest engineering</h4><p>Our docs say what is finished and what is not. We would rather under-promise than ship a claim we cannot back up.</p></div>
 </div></div></section>
 
-<section id="talven"><div class="wrap"><div class="tv rv">
+<section id="why"><div class="wrap">
+<div class="sh rv"><span class="lab">Why local-first</span><h2>What changes when the app lives on your device</h2></div>
+<div class="tw rv"><table class="cmp"><thead><tr><th></th><th>Typical cloud app</th><th>Cambric</th></tr></thead><tbody>
+<tr><td>Where your data lives</td><td>On the company's servers</td><td>On your device</td></tr>
+<tr><td>Works offline</td><td>Limited or not at all</td><td>Yes, by design</td></tr>
+<tr><td>Account required</td><td>Almost always</td><td>No account</td></tr>
+<tr><td>Pricing</td><td>Recurring subscription</td><td>Free or one-time purchase</td></tr>
+<tr><td>If the company disappears</td><td>The service and your data may go too</td><td>The app keeps running</td></tr>
+<tr><td>Telemetry</td><td>Usually on by default</td><td>None in Max Tools and Web Explorer</td></tr>
+</tbody></table></div>
+<p class="sd rv" style="text-align:center;font-size:14px;margin-top:16px">General comparison. Individual cloud apps vary. Veyro's assistant screen calls a hosted endpoint and says so in the app.</p>
+</div></section>
+<section id="story"><div class="wrap"><div class="story rv">
+<div class="mono" aria-hidden="true">A</div>
+<div><span class="lab">Our story</span><h2 style="margin-top:8px">Built by a student who got tired of renting software</h2>
+<p><strong>Cambric was founded by Asser Karim</strong> while still a student. The idea is simple: the apps you use should run on your own hardware, keep your data with you, and keep working when the internet or the company does not.</p>
+<p>So we build real products instead of demos: a smartwatch ecosystem, an offline toolkit, a creative suite, and a web-discovery robot. The long-term goal is <strong>Talven</strong>, a local AI platform you buy once and truly own.</p>
+<p>Revenue is meant to fund better hardware, research and new products, not luxury.</p></div>
+</div></div></section>
+<section id="download"><div class="wrap"><div class="dl rv">
+<span class="os" id="os">Detecting your system…</span>
+<h2 style="margin:0 0 10px">Download Max Tools</h2>
+<p class="sd" id="dltxt">Checking for the latest release…</p>
+<div class="acts" id="dlbtn"></div>
+</div></div></section>
+<section class="dark" id="talven"><div class="wrap"><div class="tv rv">
 <span class="lab">Coming next</span><h2>Talven</h2>
 <p class="sd" style="max-width:640px;margin:auto">A local-first AI assistant for coding and productivity that runs on your own computer. Download it once, own your models for life, with no subscription and no usage caps.</p>
 <div class="fam">
@@ -218,10 +302,26 @@ dialog::backdrop{background:rgba(0,0,0,.75);backdrop-filter:blur(5px)}
 <div class="fm"><b>Atlas</b><small>Reasoning</small><p>Long-context planning, research and technical analysis.</p></div>
 <div class="fm"><b>Crown</b><small>Flagship</small><p>Our most capable models for reasoning and coding.</p></div>
 </div>
-<span class="badge"><i></i>In design · follow progress on GitHub</span>
+<div class="acts"><a class="btn w" href="mailto:asser.k.dev@gmail.com?subject=Talven%20updates&body=Please%20tell%20me%20when%20Talven%20is%20ready.">Tell me when it is ready</a><a class="btn" href="https://github.com/Cambric-software/cambric-software/discussions" target="_blank" rel="noopener">Join the discussion</a></div><p class="sd" style="font-size:13px;margin-top:14px">No tracking form. Just an email to us, or a GitHub discussion.</p>
 </div></div></section>
 
-<section class="dark" id="contact"><div class="wrap">
+<section id="support"><div class="wrap">
+<div class="sh rv"><span class="lab">Support</span><h2>What your support funds</h2><p class="sd">Cambric is independent. Every contribution goes straight back into the work.</p></div>
+<div class="fund rv"><div><i>🖥</i><b>Better GPUs and computers</b><p>For testing and training local models.</p></div><div><i>🔬</i><b>AI research</b><p>Experiments that lead to Talven and the model families.</p></div><div><i>⌚</i><b>Hardware development</b><p>Real Veyro watch prototypes and testing.</p></div><div><i>🧰</i><b>New products</b><p>More tools that put users in control.</p></div></div>
+<div class="acts"><button class="btn w" id="don2">Support Cambric</button></div>
+</div></section>
+<section class="dark" id="faq"><div class="wrap">
+<div class="sh rv"><span class="lab">FAQ</span><h2>Quick answers</h2></div>
+<div class="faq rv">
+<details><summary>Is Cambric software free?</summary><p>Web Explorer is free to use. Max Tools and the other apps may be installed and used free of charge on your own devices for personal, educational or internal business use. Talven's Ember models are planned to be free forever, with Forge, Atlas and Crown as one-time purchases.</p></details>
+<details><summary>Is my data sent anywhere?</summary><p>Not by Max Tools, C-Editor or Web Explorer. Your data stays on your device or in your browser. One exception: Veyro's assistant screen calls a hosted endpoint, and the app tells you when it does.</p></details>
+<details><summary>Is the code open source?</summary><p>No. The products are proprietary, with source published for inspection and personal use under each repository's license. We would rather say so plainly.</p></details>
+<details><summary>Which platforms are supported?</summary><p>Max Tools targets Windows, Linux and Android. C-Editor is for Windows. Digital Saver is a Flutter app. Web Explorer runs in any modern browser.</p></details>
+<details><summary>Is the Veyro watch available to buy?</summary><p>Not yet. Veyro is a prototype and a design goal. The companion app works today, and the watch firmware has not been tested on production hardware.</p></details>
+<details><summary>When will Talven launch?</summary><p>Talven is in the design stage, so there is no release date. It will start as a desktop app that runs models on your own computer.</p></details>
+<details><summary>How can I report a security issue?</summary><p>Please do not open a public issue. Each repository has a SECURITY.md that explains how to report one privately.</p></details>
+</div></div></section>
+<section id="contact"><div class="wrap">
 <div class="sh rv"><span class="lab">Contact</span><h2>Let's build something</h2><p class="sd">Have a project in mind or a question about a product? Reach out.</p></div>
 <div class="cm">
 <a class="ci rv" href="mailto:asser.k.dev@gmail.com"><i>✉</i><div><small>Email</small>asser.k.dev@gmail.com</div></a>
@@ -229,7 +329,7 @@ dialog::backdrop{background:rgba(0,0,0,.75);backdrop-filter:blur(5px)}
 <a class="ci rv" href="https://github.com/Cambric-software" target="_blank" rel="noopener" style="--d:.16s"><i>⌥</i><div><small>GitHub</small>github.com/Cambric-software</div></a>
 </div></div></section>
 
-<footer><div class="wrap"><b>CAMBRIC</b><p>LOCAL · PRIVATE · YOURS</p><p style="margin-top:18px">© 2026 Cambric Software &amp; Hardware Studios. Founder: Asser Karim.</p></div></footer>
+<footer><div class="wrap"><div class="fg"><div><b>CAMBRIC</b><p>Private, local-first software and hardware, built independently.</p></div><div><h5>Products</h5><a href="https://github.com/Cambric-software/Digital-saver" target="_blank" rel="noopener">Veyro</a><a href="https://github.com/Cambric-software/Max-Tools" target="_blank" rel="noopener">Max Tools</a><a href="https://cambric-software.github.io/web-explorer/" target="_blank" rel="noopener">Web Explorer</a><a href="https://github.com/Cambric-software/C-EDITOR" target="_blank" rel="noopener">C-Editor</a></div><div><h5>Studio</h5><a href="#story">Our story</a><a href="#faq">FAQ</a><a href="#contact">Contact</a><a href="https://github.com/Cambric-software" target="_blank" rel="noopener">GitHub</a></div></div><div class="fb"><p>© 2026 Cambric Software &amp; Hardware Studios · Founder: Asser Karim · LOCAL · PRIVATE · YOURS</p></div></div></footer>
 
 <dialog id="dlg"><h3>Support Cambric</h3><p style="color:#a1a1aa;margin-top:6px">Tap a number to copy it.</p>
 <button class="do" data-n="01007379630"><small>InstaPay</small><p>01007379630</p></button>
@@ -274,6 +374,45 @@ var dx=p.x-m.x,dy=p.y-m.y,dm=Math.hypot(dx,dy);if(dm<140){p.x+=dx/dm*1.2;p.y+=dy
 for(var j=i+1;j<P.length;j++){var q=P[j],dd=Math.hypot(p.x-q.x,p.y-q.y);if(dd<130){x.globalAlpha=(1-dd/130)*.4;x.strokeStyle='#67e8f9';x.beginPath();x.moveTo(p.x,p.y);x.lineTo(q.x,q.y);x.stroke()}}
 x.globalAlpha=.85;x.fillStyle='#67e8f9';x.beginPath();x.arc(p.x,p.y,1.8,0,6.3);x.fill()});
 requestAnimationFrame(draw)})();
+})();
+</script>
+<script>
+(function(){
+var $=function(s){return document.querySelector(s)},rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.1});
+document.querySelectorAll('.rv:not(.in)').forEach(function(e){io.observe(e)});
+$('#don2').onclick=function(){$('#dlg').showModal()};
+/* palette demo */
+var cmds=[['hash my password','file.checksum','Matched: hash','Runs locally, nothing leaves your device'],['convert 2gb','everyday.units','Matched: convert','Arguments filled in: 2 GB'],['project profit revenue 5000 costs 1000','money.wealth','Matched: profit','States its assumptions before answering'],['checsum this file','file.checksum','Did you mean: checksum','Typo corrected, nothing guessed']],ci=0,pt=$('#pt'),pr=$('#pr');
+function run(){var c=cmds[ci],i=0;pr.classList.remove('on');pt.textContent='';
+(function t(){if(i<=c[0].length){pt.textContent=c[0].slice(0,i++);setTimeout(t,rm?0:55)}else{pr.innerHTML='Tool: <b>'+c[1]+'</b><br>'+c[2]+'<br>'+c[3];pr.classList.add('on');ci=(ci+1)%cmds.length;if(!rm)setTimeout(run,3200)}})()}
+run();
+/* optional screenshots: drop shot-1.png ... shot-4.png next to index.html */
+var sh=$('#shots');for(var n=1;n<=4;n++){var im=new Image();im.alt='Cambric product screenshot '+n;im.loading='lazy';im.onload=(function(m){return function(){sh.appendChild(m)}})(im);im.src='shot-'+n+'.png'}
+/* github activity (cached 30 min) */
+function esc(t){return String(t||'').replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+function get(url,key,cb,bad){try{var c=JSON.parse(localStorage.getItem(key)||'null');if(c&&Date.now()-c.t<18e5)return cb(c.d)}catch(e){}
+fetch(url).then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(d){try{localStorage.setItem(key,JSON.stringify({t:Date.now(),d:d}))}catch(e){}cb(d)}).catch(function(){bad&&bad()})}
+/* download */
+var ua=navigator.userAgent,os=/Android/i.test(ua)?'Android':/Win/i.test(ua)?'Windows':/Linux|X11/i.test(ua)?'Linux':/Mac/i.test(ua)?'macOS':'your device';
+$('#os').textContent='Detected: '+os;
+var rel='https://github.com/Cambric-software/Max-Tools/releases';
+function none(){$('#dltxt').textContent='The first public release is not out yet. Max Tools runs on Windows, Linux and Android. Watch the repository to hear when it ships.';$('#dlbtn').innerHTML='<a class="btn w" href="'+rel+'" target="_blank" rel="noopener">Watch releases →</a><a class="btn" href="https://github.com/Cambric-software/Max-Tools" target="_blank" rel="noopener">View project</a>'}
+get('https://api.github.com/repos/Cambric-software/Max-Tools/releases/latest','cb_rel',function(r){
+var ext={Windows:/\.exe$/i,Linux:/\.deb$/i,Android:/\.apk$/i}[os],a=(r.assets||[]).filter(function(x){return ext&&ext.test(x.name)})[0];
+if(a){$('#dltxt').textContent='Latest version '+esc(r.tag_name)+'. Free for personal use.';$('#dlbtn').innerHTML='<a class="btn w" href="'+esc(a.browser_download_url)+'">Download for '+os+'</a><a class="btn" href="'+rel+'" target="_blank" rel="noopener">All downloads</a>'}else if(r.tag_name){$('#dltxt').textContent='Version '+esc(r.tag_name)+' is out. Pick your platform on the releases page.';$('#dlbtn').innerHTML='<a class="btn w" href="'+rel+'" target="_blank" rel="noopener">See downloads →</a>'}else none()},none);
+})();
+</script>
+<button id="up" aria-label="Back to top">↑</button>
+<script>
+(function(){var $=function(q){return document.querySelector(q)},rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+var nv=$('nav'),bg=$('#bg');bg.onclick=function(){var o=nv.classList.toggle('open');bg.setAttribute('aria-expanded',o)};
+document.querySelectorAll('nav a.l').forEach(function(a){a.addEventListener('click',function(){nv.classList.remove('open')})});
+var up=$('#up');addEventListener('scroll',function(){up.classList.toggle('on',scrollY>900)},{passive:true});up.onclick=function(){scrollTo({top:0,behavior:rm?'auto':'smooth'})};
+if(rm||matchMedia('(hover:none)').matches)return;
+var g=$('#glow'),tx=-999,ty=-999,x=tx,y=ty;addEventListener('pointermove',function(e){tx=e.clientX;ty=e.clientY},{passive:true});
+(function f(){x+=(tx-x)*.12;y+=(ty-y)*.12;g.style.transform='translate('+x+'px,'+y+'px)';requestAnimationFrame(f)})();
+document.querySelectorAll('.btn.w,.chip').forEach(function(b){b.addEventListener('pointermove',function(e){var r=b.getBoundingClientRect();b.style.transform='translate('+((e.clientX-r.left-r.width/2)*.2)+'px,'+((e.clientY-r.top-r.height/2)*.3)+'px)'});b.addEventListener('pointerleave',function(){b.style.transform=''})})
 })();
 </script>
 </body>
